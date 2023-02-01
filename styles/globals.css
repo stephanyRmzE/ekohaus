@@ -524,16 +524,10 @@ span.text-red {
 }
 
 .selected-image {
-  background-color: #f02d34;
+  padding: 2px;
+  background-color: #04d62a;
 }
 
-.reviews {
-  color: #f02d34;
-  margin-top: 10px;
-  display: flex;
-  gap: 5px;
-  align-items: center;
-}
 
 .product-detail-desc h4 {
   margin-top: 10px;
@@ -543,10 +537,6 @@ span.text-red {
   margin-top: 10px;
 }
 
-.reviews p {
-  color: #324d67;
-  margin-top: 0px;
-}
 
 .product-detail-desc .price {
   font-weight: 700;
