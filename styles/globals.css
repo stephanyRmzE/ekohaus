@@ -33,7 +33,7 @@ a {
 .navbar-container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.5em;
+  margin: 0.5em;
   padding: 0.5em;
   position: relative;
   border-bottom: 1px solid #5f5f5f36;
@@ -57,7 +57,7 @@ a {
   position: absolute;
   white-space: nowrap;
   will-change: transform;
-  animation: marquee 15s linear infinite;
+  animation: marquee 30s linear infinite;
   width: 180%;
 }
 
@@ -148,6 +148,8 @@ span.text-red {
 .product-card:hover {
   transform: scale(1.1, 1.1)
 }
+
+
 
 .product-image {
   border-radius: 5px;
@@ -487,18 +489,17 @@ span.text-red {
 .product-detail-container {
   display: flex;
   gap: 40px;
-  margin: 40px;
-  margin-top: 60px;
+  margin-top: 40px;
+  justify-content: center;
   color: #324d67;
 
 }
 
 .product-detail-image {
-  border-radius: 15px;
+  border-radius: 5px;
   background-color: #ebebeb;
-
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  height: 500px;
   cursor: pointer;
   transition: .3s ease-in-out;
 }
@@ -551,7 +552,7 @@ span.text-red {
   font-weight: 700;
   font-size: 26px;
   margin-top: 30px;
-  color: #f02d34;
+  color: #1e1e1e;
 }
 
 .price .old-price,
@@ -573,23 +574,29 @@ span.text-red {
   gap: 30px;
 }
 
+
+
 .buttons .add-to-cart {
-  padding: 10px 20px;
-  border: 1px solid #f02d34;
-  margin-top: 40px;
-  font-size: 18px;
-  font-weight: 500;
-  background-color: white;
-  color: #f02d34;
+  background-color: #f4c73e;
+  border-radius: 2px;
+  border-style: none;
+  color: #FFFFFF;
   cursor: pointer;
-  width: 200px;
-  transform: scale(1, 1);
-  transition: transform 0.5s ease;
+  margin-top: 40px;
+  font-size: 16px;
+  font-weight: 400;
+  width: 400px;
+  padding: 10px 20px;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all .5s;
 }
 
 .buttons .add-to-cart:hover {
-  transform: scale(1.1, 1.1)
+  background-color: #f3ca4f;
+  box-shadow: rgba(244, 199, 62, 0.5) 0 1px 20px;
+  transition-duration: .1s;
 }
+
 
 .buttons .buy-now {
   width: 200px;
@@ -637,7 +644,7 @@ span.text-red {
 }
 
 .maylike-products-wrapper {
-  margin-top: 120px;
+  margin-top: 110px;
 }
 
 .maylike-products-wrapper h2 {
