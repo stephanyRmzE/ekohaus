@@ -1,7 +1,7 @@
 
 
 
-import product from './product';
+import murosVerdes from './murosVerdes';
 import banner from './banner';
 
-export const schemaTypes = [product, banner]
+export const schemaTypes = [murosVerdes, banner]
