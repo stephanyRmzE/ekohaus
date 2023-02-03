@@ -1,6 +1,6 @@
 export default {
-  name: 'product',
-  title: 'Product',
+  name: 'murosVerdes',
+  title: 'Muros Verdes',
   type: 'document',
   fields: [
     {
