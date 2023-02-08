@@ -1,6 +1,3 @@
-
-
-
 import murosVerdes from './murosVerdes';
 import banner from './banner';
 
