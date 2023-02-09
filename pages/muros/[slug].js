@@ -5,7 +5,7 @@ import {client, urlFor} from '../../lib/client'
 import Product from '../../components/Product'
 import {useStateContext} from '../../context/StateContext'
 
-const ProductDetails = ({ product, products }) => {
+const MuroDetails = ({ product, products }) => {
   const {image, name, details, price} = product;
   const [index, setIndex] = useState(0);
   const { decQty, incQty, qty, onAdd, cartItems} = useStateContext();
@@ -75,7 +75,7 @@ const ProductDetails = ({ product, products }) => {
 }
 
 export async function getStaticPaths() {
-  const Query = `*[_type == "product"] {
+  const Query = `*[_type == "muros"] {
     slug {
       current
     }
@@ -98,13 +98,13 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: {slug}}) {
   // Fetch data from external API
-  const productQuery = `*[_type == "product" && slug.current == '${slug}'][0]`
+  const productQuery = `*[_type == "muros" && slug.current == '${slug}'][0]`
   const product = await client.fetch(productQuery)
 
-  const productsQuery = '*[_type == "product"]'
+  const productsQuery = '*[_type == "muros"]'
   const products = await client.fetch(productsQuery)
 
   return { props: { product, products } }
 }
 
-export default ProductDetails
+export default MuroDetails
