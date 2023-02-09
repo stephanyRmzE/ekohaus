@@ -36,7 +36,7 @@ const index = ({ productsData, bannerData } ) => {
 
 export async function getServerSideProps() {
   // Fetch data from external API
-  const productsQuery = '*[_type == "product"]'
+  const productsQuery = '*[_type == "muros"]'
   const productsData = await client.fetch(productsQuery)
 
   const bannerQuery = '*[_type == "banner"]'
