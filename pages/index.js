@@ -6,7 +6,7 @@ import {useStateContext} from '../context/StateContext'
 
 const OPTIONS = { slidesToScroll: 'auto', containScroll: 'trimSnaps' }
 
-const index = ({ productsData, bannerData } ) => {
+const index = ({ murosData, pastosData,  bannerData } ) => {
   const [emblaRef] = useEmblaCarousel(OPTIONS)
 
 
@@ -22,7 +22,22 @@ const index = ({ productsData, bannerData } ) => {
       <div className="embla">
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container">
-            {productsData?.map((product) =>
+            {murosData?.map((product) =>
+              <Product key={product._id} product = {product}/>
+            )}
+
+          </div>
+        </div>
+      </div>
+
+      <div className='products-heading'>
+        <h2>Pasto Sintetico</h2>
+        <p>Renueva tu entrada o jardín con nuestros diferentes modelos de apariencia  y sensación de un jardín natural, libre de mantenimiento.</p>
+      </div>
+      <div className="embla">
+        <div className="embla__viewport" ref={emblaRef}>
+          <div className="embla__container">
+            {pastosData?.map((product) =>
               <Product key={product._id} product = {product}/>
             )}
 
@@ -36,14 +51,17 @@ const index = ({ productsData, bannerData } ) => {
 
 export async function getServerSideProps() {
   // Fetch data from external API
-  const productsQuery = '*[_type == "muros"]'
-  const productsData = await client.fetch(productsQuery)
+  const murosQuery = '*[_type == "muros"]'
+  const murosData = await client.fetch(murosQuery)
+
+  const pastosQuery = '*[_type == "pasto"]'
+  const pastosData = await client.fetch(pastosQuery)
 
   const bannerQuery = '*[_type == "banner"]'
   const bannerData = await client.fetch(bannerQuery)
 
   // Pass data to the page via props
-  return { props: { productsData, bannerData } }
+  return { props: { murosData, pastosData, bannerData } }
 }
 
 
