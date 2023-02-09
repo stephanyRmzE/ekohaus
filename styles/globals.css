@@ -668,6 +668,11 @@ span.text-red {
   font-size: 40px;
 }
 
+.canceled-icon {
+  color: rgb(128, 26, 0);
+  font-size: 40px;
+}
+
 .success h2 {
   text-transform: capitalize;
   margin-top: 15px 0px;
