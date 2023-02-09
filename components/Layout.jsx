@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { Navbar } from './Navbar'
 import Footer from './Footer'
 import {useStateContext} from '../context/StateContext'
+import Contact from './Contact'
 
 const Layout = ({children}) => {
   const { cartItems, setCartItems, totalPrice, setTotalPrice, totalQuantities, setTotalQuantities} = useStateContext();
@@ -33,6 +34,7 @@ const Layout = ({children}) => {
       <main className="main-container">
         {children}
       </main>
+      <Contact/>
       <footer>
         <Footer/>
       </footer>

@@ -331,12 +331,20 @@ span.text-red {
 
 }
 
+.footer {
+  background: #B1BF95;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 150px;
+  padding: 0px 1em;
+  color: rgba(0, 0, 0, 0.3);
+  align-items: center;
+  justify-items: center;
+}
+
 .footer-container {
-  color: #B1BF95;
+  color: #2c3a12;
   text-align: center;
-  margin-top: 20px;
-  padding: 30px 10px;
-  font-weight: 700;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -351,6 +359,12 @@ span.text-red {
   gap: 10px;
 }
 
+.nav-call {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  cursor: default;
+}
 
 .cart-heading {
   display: flex;
@@ -707,6 +721,193 @@ span.text-red {
 
 .product-max-qty {
   margin-top: 10px;
+}
+
+.contact-container {
+  width: 100vw;
+  height: max-content;
+  position: relative;
+  top: 0px;
+  margin-bottom: 6em;
+}
+
+.contact-map {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  margin: 0;
+  justify-content: space-evenly;
+}
+
+.contactDiv {
+  width: 45%;
+  margin: 0;
+}
+
+
+.contact-info {
+  margin: 2em 0;
+}
+
+.contact-info h2 {
+  margin: 1em 0 0;
+  color: rgb(7, 48, 16);
+}
+
+.infoDiv {
+  width: 100%;
+}
+
+.contact-icons {
+  height: 20px;
+  width: 22px;
+}
+
+.formInputDiv {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+}
+
+.messageForm {
+  margin: 0;
+  width: 100%;
+
+}
+
+
+.messageDiv {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.messageLabel {
+  margin-bottom: 0.5rem;
+}
+
+.textarea {
+  box-shadow: rgba(0, 0, 0, 0.11);
+  border: none;
+  background: #e9e9e954;
+  height: 10rem;
+  width: 100%;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0.8em;
+  font-size: 1rem;
+
+
+}
+
+.pageHeader {
+  font-size: 2.5em;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1em;
+  width: 50%;
+  color: #2c3a12;
+}
+
+.inputLabel {
+  color: #391A4C;
+  text-align: left;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+.messageForm .btn-orange {
+  font-size: 1em;
+}
+
+.formInput {
+  background-color: #e9e9e954;
+  border: none;
+  padding: 0.8em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.map-container {
+  width: 50vw;
+  height: 50vh;
+}
+.direccion-container{
+  height: auto;
+}
+.direccion-text{
+  text-align: center;
+  color: #2c3a12;
+  margin: 0.5em;
+}
+
+.combobox-input {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+
+@media (max-width: 1000px) {
+  .contact-map {
+    flex-direction: column;
+  }
+
+  .contactDiv {
+    width: 90vw;
+    margin-bottom: 3em;
+  }
+
+  .map-container {
+    width: 90vw;
+    height: 50vh;
+    margin-bottom: 2em;
+  }
+
+
+}
+
+@media (max-width: 700px) {
+
+  .contact-map {
+    flex-direction: column;
+  }
+
+  .contactDiv {
+    width: 90vw;
+    margin-bottom: 3em;
+  }
+
+  .infoDiv {
+    display: block;
+    width: 100%;
+  }
+
+  .formInputDiv {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .primaryButton {
+    margin: auto;
+    width: 100%;
+  }
+
+  .pageHeader {
+    font-size: 1.7rem;
+  }
+
+  .map-container {
+    width: 90vw;
+    height: 50vh;
+    margin-bottom: 2em;
+  }
+
 }
 
 @media screen and (max-width:800px) {
