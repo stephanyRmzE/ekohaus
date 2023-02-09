@@ -2,11 +2,13 @@ import React from 'react'
 import {client} from '../lib/client.js'
 import { Product, FooterBanner, HeroBanner} from '../components/index'
 import useEmblaCarousel from 'embla-carousel-react'
+import {useStateContext} from '../context/StateContext'
 
 const OPTIONS = { slidesToScroll: 'auto', containScroll: 'trimSnaps' }
 
 const index = ({ productsData, bannerData } ) => {
   const [emblaRef] = useEmblaCarousel(OPTIONS)
+
 
   return (
     <div>
