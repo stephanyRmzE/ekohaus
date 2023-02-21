@@ -37,8 +37,8 @@ a {
   width: auto;
   height: 70px;
   position: relative;
-  padding: 6px 18px;
-  margin-bottom: 6px;
+  padding: 6px 25px;
+  margin-bottom: 15px;
   box-shadow: 0 0 10px 0 rgba(207, 207, 207, 0.599);
 }
 
@@ -321,9 +321,9 @@ span.text-red {
 }
 
 .hero-banner-container {
-  margin: 0 5%;
+  margin: 0 1em;
   padding: 100px 40px;
-  border-radius: 10px;
+  border-radius: 7px;
   height: 60vh;
   line-height: 0.9;
   width: auto;
@@ -331,15 +331,16 @@ span.text-red {
 }
 
 .hero-banner-container .hero-small-title {
-  font-size: 30px;
-  font-weight: 500;
+  font-size: 32px;
+  font-weight: 600;
   color: #fffdfd;
+  background-color: #00000022;
 }
 
 .hero-banner-container button {
-  border-radius: 15px;
+  border-radius: 5px;
   padding: 10px 16px;
-  background-color: #f02d34;
+  background-color: #74962F;
   color: white;
   border: none;
   margin-top: 40px;
@@ -352,6 +353,7 @@ span.text-red {
 .hero-banner-container h3 {
   font-size: 4rem;
   margin-top: 4px;
+  background-color: #00000022;
 }
 
 .hero-banner-container h1 {
@@ -421,7 +423,7 @@ span.text-red {
   border-radius: 15px;
   padding: 10px 16px;
   background-color: white;
-  color: red;
+  color: #f4c73e;
   border: none;
   margin-top: 40px;
   font-size: 18px;
@@ -477,7 +479,15 @@ span.text-red {
   float: right;
   padding: 40px 10px;
   position: relative;
+}
 
+.mailing-container {
+  height: 100vh;
+  width: 500px;
+  background-color: white;
+  float: right;
+  padding: 40px 10px;
+  position: relative;
 }
 
 .footer {
@@ -632,7 +642,7 @@ span.text-red {
   margin-top: 10px;
   margin-top: 40px;
   text-transform: uppercase;
-  background-color: #f02d34;
+  background-color: #f4c73e;
   color: #fff;
   cursor: pointer;
   transform: scale(1, 1);
@@ -1107,6 +1117,7 @@ a {
   .hero-banner-container button {
     margin-top: 90px;
     z-index: 10000;
+
   }
 
   .desc {
@@ -1123,6 +1134,11 @@ a {
   }
 
   .cart-container {
+    width: 100%;
+    padding: 4px;
+  }
+
+  .mailing-container{
     width: 100%;
     padding: 4px;
   }

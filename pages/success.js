@@ -4,6 +4,9 @@ import {BsBagCheckFill} from 'react-icons/bs'
 
 import {useStateContext} from '../context/StateContext'
 import { runConfetti } from '../lib/utils'
+
+
+
 const Success = () => {
   const { setCartItems, setTotalPrice, setTotalQuantities} = useStateContext();
 
@@ -28,6 +31,7 @@ const Success = () => {
           Si tiene alguna duda, por favor mande un correo a
           <a href="mailto:order@example.com" className="email">order@example.com</a>
         </p>
+
         <Link href='/'>
           <button type='button' width='300px' className="btn">
             Continua comprando

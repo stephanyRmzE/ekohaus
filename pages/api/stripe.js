@@ -45,6 +45,9 @@ export default async function handler(req, res) {
 
       // Create Checkout Sessions from body params.
       const session = await stripe.checkout.sessions.create(params);
+      const paymentIntent = await stripe.customers.retrieve(
+        session.client_secret);
+      console.log(paymentIntent)
       res.status(200).json(session)
     } catch (err) {
       res.status(err.statusCode || 500).json(err.message);
@@ -53,4 +56,7 @@ export default async function handler(req, res) {
     res.setHeader('Allow', 'POST');
     res.status(405).end('Method Not Allowed');
   }
+
+
+
 }
