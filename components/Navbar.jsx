@@ -40,7 +40,7 @@ export const Navbar = () => {
 
             <li  >
               <Link
-              href='/'
+              href='/contact'
             >Contactanos</Link>
             </li>
 

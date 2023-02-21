@@ -8,15 +8,17 @@ const Footer = () => {
       <div className='footer-container'>
         <div className='direccion-text'>
             <h2>Dirección</h2>
-            <p>Arco Sur, Campo Nuevo, 91193 Xalapa-Enríquez</p>
+            <p>Circuito arco sur 102 col. Lomas verdes Xalapa,Veracruz.</p>
             </div>
-        <a href="tel:551-375-4575" className='nav-call'>
+            <h2>Telefono</h2>
+        <a href="tel:228-106-5003" className='nav-call'>
             <AiFillPhone/>
-            551 375 4575
+            228 106 5003
         </a>
       </div>
       <div className='footer-container'>
         <p>2023 Ekohaus del Golfo All rights reserved</p>
+        <p>Siguenos en redes sociales</p>
         <p className='icons'>
           <a href="https://www.instagram.com/ekohausdelgolfo/">
           <AiFillInstagram/>

@@ -1,6 +1,6 @@
 import React from 'react'
 import {client} from '../lib/client.js'
-import { Product, FooterBanner, HeroBanner} from '../components/index'
+import { Product, HeroBanner} from '../components/index'
 import useEmblaCarousel from 'embla-carousel-react'
 import {useStateContext} from '../context/StateContext'
 

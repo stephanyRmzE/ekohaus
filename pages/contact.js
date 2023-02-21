@@ -1,5 +1,5 @@
-import Location from './Location'
-import {useState, useRef} from "react";
+import Location from '../components/Location'
+import {useRef} from "react";
 import Select from "react-select";
 import emailjs from '@emailjs/browser';
 
