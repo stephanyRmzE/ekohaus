@@ -17,9 +17,11 @@ const HeroBanner = ({heroBanner}) => {
                     backgroundSize: '100% 100%',
                     backgroundRepeat: 'no-repeat'
                   }}>
+
+        
         <p className="hero-small-title">{heroBanner.smallText}</p>
         <h3 className='hero-title'>{heroBanner.midText}</h3>
-       
+
       </div>
     </div>
   )
