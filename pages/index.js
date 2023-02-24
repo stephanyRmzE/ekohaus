@@ -30,20 +30,7 @@ const index = ({ murosData, pastosData,  bannerData } ) => {
         </div>
       </div>
 
-      <div className='products-heading'>
-        <h2>Pasto Sintetico</h2>
-        <p>Renueva tu entrada o jardín con nuestros diferentes modelos de apariencia  y sensación de un jardín natural, libre de mantenimiento.</p>
-      </div>
-      <div className="embla">
-        <div className="embla__viewport" ref={emblaRef}>
-          <div className="embla__container">
-            {pastosData?.map((product) =>
-              <Product key={product._id} product = {product}/>
-            )}
-
-          </div>
-        </div>
-      </div>
+      
 
     </div>
   )
