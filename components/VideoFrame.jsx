@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useRef} from 'react'
+import PropTypes from "prop-types";
 
 function VideoFrame({embedId}) {
 
@@ -19,8 +20,7 @@ function VideoFrame({embedId}) {
   };
   return (
     <div ref={divRef} className="video-responsive">
-      <span onClick={onClick} className="ti-control-play position-absolute display-1 text-white" />
-      <img onClick={onClick} loading="lazy" src={`https://img.youtube.com/vi/${video}/default.jpg`} alt="YouTube Video Thumbnail" width={width} height={height} className="shadow" />
+      <img onClick={onClick} loading="lazy" src={`https://img.youtube.com/vi/${embedId}/mqdefault.jpg`} alt="YouTube Video Thumbnail" width={853} height={480} />
     </div>
   )
 }
