@@ -1,4 +1,5 @@
 import muros from './muros';
 import banner from './banner';
 import pasto from './pasto';
-export const schemaTypes = [muros,pasto, banner]
+import gallery from './gallery';
+export const schemaTypes = [muros,pasto, banner,gallery]

@@ -43,11 +43,15 @@ export const Navbar = () => {
 
             <li className='nav-links' onClick={handleClick} >
               <Link
-              href='/'
+              href='/servicios'
             >Servicios</Link>
             </li>
 
-
+            <li className='nav-links' onClick={handleClick} >
+              <Link
+              href='/instalacion'
+            >Instalacion</Link>
+            </li>
 
             <li className='nav-links' onClick={handleClick} >
               <Link

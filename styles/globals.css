@@ -52,8 +52,8 @@ a {
 
 .nav-menu {
   display: grid;
-  grid-template-columns: repeat(4, auto);
-  grid-gap: 10px;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 2em;
   list-style: none;
   align-items: start;
   line-height: 60px;
@@ -62,7 +62,7 @@ a {
 
 .nav-menu a {
   cursor: default;
-  padding: 0 0.2rem 0.5rem 0.2rem;
+  padding: 0 0.5rem 0.5rem 0.5rem;
   border-bottom: 3px solid #74962F;
 }
 
@@ -80,9 +80,6 @@ a {
   color: #222;
   cursor: default;
   border-radius: 3px;
-  padding: 0 1em;
-
-
 }
 
 
@@ -987,21 +984,70 @@ a {
 
 
 .video-responsive {
-  overflow: hidden;
-  padding-bottom: 56.25%;
-  position: relative;
-  height: 0;
+  display: flex;
+  justify-content: center;
+  height: 60vh;
+  width: auto;
+  margin: 2em auto 0;
 }
 
-.video-responsive iframe {
-  left: 0;
-  top: 0;
+.video-responsive img{
   height: 100%;
-  width: 100%;
-  position: absolute;
+  width: 56.8%;
+}
+.video-responsive iframe {
+  height: 100%;
+  width: 56.8%;
+}
+.instalacion-container{
+  text-align: center;
+  margin: 40px 1rem;
+  color: #2f4e24;
+}
+
+
+.instalacion-container h3 {
+  margin-top: 1em;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+
+.list-div{
+  display: flex;
+  justify-content: center;
+  width: 70vw;
+  margin: 2rem auto;
+}
+
+.list-div ul,ol {
+  margin-left: 0.75em;
+  text-align: justify;
+  line-height: 1.2rem;
+}
+
+.list-div li {
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+
+.servicios-container {
+  text-align: center;
+  margin: 40px 1rem;
+  color: #2f4e24;
 }
 
 @media (max-width: 1000px) {
+  .video-responsive img {
+      height: 100%;
+      width: 80%;
+  }
+
+  .video-responsive iframe {
+    height: 100%;
+    width: 80%;
+  }
+
   .contact-map {
     flex-direction: column;
   }
@@ -1315,11 +1361,28 @@ a {
 }
 
 @media (max-width: 400px) {
+
+  .video-responsive {
+    height: 30vh;
+  }
+
+  .video-responsive img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .video-responsive iframe {
+    height: 100%;
+    width: 100%;
+  }
+
+  .list-div {
+    width: 85vw;
+    margin: 1rem auto;
+  }
   .formNumDiv {
       width: 100%;
     }
-
-
 
   .products-heading h2 {
     font-size: 30px;
