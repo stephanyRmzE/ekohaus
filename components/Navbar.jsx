@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import Link from 'next/link'
-import {AiOutlineShopping} from 'react-icons/ai'
+import {AiOutlineShopping, AiOutlineSearch} from 'react-icons/ai'
 import {Cart} from './'
 import {useStateContext} from '../context/StateContext'
 import { FaBars, FaTimes } from 'react-icons/fa';
@@ -15,19 +15,40 @@ export const Navbar = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
 
+  const clickPoint = useRef();
+    const handleFocus = () => {
+        clickPoint.current.style.display = "none";
+    };
+
+    const handleBlur = () => {
+        clickPoint.current.style.display = "block";
+    };
+
 
   return (
 
     <div className="navbar">
+
       <p className='logo'>
         <Link href='/'>
           <img src='/assets/ekohaus_logo.png' alt="logo ekohaus" />
         </Link>
       </p>
 
+
         <div className='nav-links-cart'>
 
           <ul className={click ? 'nav-menu active' : 'nav-menu '}>
+
+            <li className='nav-search'>
+
+              <form id="search" method="get" action="">
+                <input type="text" class="search-txt-input" name="q" maxlength="100"/>
+                <button type="submit" form="search"  class="search-button">
+                  <AiOutlineSearch className='search-icon' />
+                </button>
+	            </form>
+            </li>
 
             <li className='nav-links' onClick={handleClick}>
               <Link
@@ -53,11 +74,7 @@ export const Navbar = () => {
             >Instalacion</Link>
             </li>
 
-            <li className='nav-links' onClick={handleClick} >
-              <Link
-              href='/'
-              >Nosotros</Link>
-            </li>
+
 
           </ul>
 

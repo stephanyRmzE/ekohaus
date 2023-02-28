@@ -11,12 +11,6 @@ export default async function handler(req, res) {
         mode: 'payment',
         payment_method_types: ['card'],
         billing_address_collection: 'auto',
-        shipping_address_collection: {allowed_countries: ['MX']},
-        shipping_options:[
-          {shipping_rate: 'shr_1MXJy2A0uIQ7R28y1x7oV6Md'},
-          {shipping_rate: 'shr_1MXK1TA0uIQ7R28yhoTwzEe9'},
-          {shipping_rate: 'shr_1MXK4SA0uIQ7R28yz67QozqO'},
-        ],
         line_items: req.body.map((item) => {
           const img = item.image[0].asset._ref;
           const newImage = img.replace('image-', 'https://cdn.sanity.io/images/wej343gq/production/').replace('-png', '.png');
@@ -45,9 +39,6 @@ export default async function handler(req, res) {
 
       // Create Checkout Sessions from body params.
       const session = await stripe.checkout.sessions.create(params);
-      const paymentIntent = await stripe.customers.retrieve(
-        session.client_secret);
-      console.log(paymentIntent)
       res.status(200).json(session)
     } catch (err) {
       res.status(err.statusCode || 500).json(err.message);

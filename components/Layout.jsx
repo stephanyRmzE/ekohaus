@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { Navbar } from './Navbar'
 import Footer from './Footer'
 import {useStateContext} from '../context/StateContext'
+import {SearchBar} from './SearchBar'
 
 
 const Layout = ({children}) => {
@@ -26,7 +27,10 @@ const Layout = ({children}) => {
   return (
     <div className='layout'>
       <Head>
-        <title>Ekohaus del Golfo</title>
+        <title>Ekohaus del Golfo | Jardines Verticales Interiores y exteriores </title>
+        <link rel="icon" href="/assets/ekohaus_logo.png" />
+        <meta name="keywords"
+                    content="Muros verdes, follaje artificial, green wall, Xalapa" />
       </Head>
       <header>
         <Navbar/>
