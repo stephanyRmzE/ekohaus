@@ -15,7 +15,7 @@ function Location() {
   return (
     <div className='location-container'>
       <GoogleMap
-        zoom={15}
+        zoom={16}
         center={center}
         mapContainerClassName='map-container'>
         <Marker position={mark}></Marker>

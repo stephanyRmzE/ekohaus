@@ -1,29 +1,30 @@
-import React, {useState, useRef} from 'react'
+import React, {useState} from 'react'
 import Link from 'next/link'
 import {AiOutlineShopping, AiOutlineSearch} from 'react-icons/ai'
 import {Cart} from './'
 import {useStateContext} from '../context/StateContext'
 import { FaBars, FaTimes } from 'react-icons/fa';
-
-
+import {useRouter} from 'next/router'
 
 
 export const Navbar = () => {
 
   const { showCart, setShowCart, totalQuantities } = useStateContext();
-
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
+  const [query, setQuery] = useState('')
 
-  const clickPoint = useRef();
-    const handleFocus = () => {
-        clickPoint.current.style.display = "none";
-    };
+  const router = useRouter()
 
-    const handleBlur = () => {
-        clickPoint.current.style.display = "block";
-    };
+  const handleParam = setValue => e => setValue(e.target.value)
 
+  const handleSubmit = (e) => {
+     e.preventDefault();
+     router.replace({
+       pathname: '/murosVerdes',
+       query: {q: query},
+     })
+   }
 
   return (
 
@@ -42,24 +43,40 @@ export const Navbar = () => {
 
             <li className='nav-search'>
 
-              <form id="search" method="get" action="">
-                <input type="text" class="search-txt-input" name="q" maxlength="100"/>
-                <button type="submit" form="search"  class="search-button">
+              <form  onSubmit={handleSubmit} >
+                <input
+                  id="q"
+                  type="text"
+                  name='q'
+                  value={query}
+                  onChange={handleParam(setQuery)}
+                  className="search-txt-input"
+                  maxLength="100"
+                  />
+                <button
+                  type="submit"
+                  className="search-button">
                   <AiOutlineSearch className='search-icon' />
                 </button>
 	            </form>
             </li>
 
-            <li className='nav-links' onClick={handleClick}>
+            <li className='nav-links dropdown' onClick={handleClick}>
+
               <Link
               href='/contact'
             >Contactanos</Link>
+
+              <div className="dropdown-content">
+                <a className='dropdown-link' href='/factura'>Facturas</a>
+              </div>
+
             </li>
 
             <li className='nav-links' onClick={handleClick} >
               <Link
-              href='/factura'
-            >Facturas</Link>
+              href='/murosVerdes'
+            >Productos</Link>
             </li>
 
             <li className='nav-links' onClick={handleClick} >
@@ -73,8 +90,6 @@ export const Navbar = () => {
               href='/instalacion'
             >Instalacion</Link>
             </li>
-
-
 
           </ul>
 
