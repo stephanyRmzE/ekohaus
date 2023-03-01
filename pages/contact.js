@@ -32,56 +32,58 @@ function Contact() {
   return (
 
     <div className='contact-container' id= 'contact'>
-      <p className='pageHeader'>Contactanos</p>
-        <div className="contact-map">
+      <div className="contact-map">
 
-          <div className="contactDiv" id="contact">
-
-            <form ref={form} className='messageForm'>
-              <div className="infoDiv" >
-                <div className="formInputDiv">
-
-                  <label htmlFor='name' className='inputLabel'>Nombre *</label>
-                  <input
-                    type="text"
-                    className="formInput"
-                    name="name"/>
-                </div>
-                <div className="formInputDiv">
-                  <label htmlFor='email' className='inputLabel'>Email *</label>
-                  <input
-                    type="email"
-                    className="formInput"
-                    name= 'email'/>
-                </div>
-
-                <div className="formInputDiv">
-                  <Select
-                    name="servicio"
-                    defaultValue={{label:'Selecciona un servicio', value:'Selecciona un servicio' }}
-                    options = {options}
-                  />
-                </div>
-
-              </div>
-              <div className='messageDiv'>
-                <label htmlFor='message' className='inputLabel'>Medidas y mas informacion </label>
-                <textarea
-                  name='message'
-                  className='textarea'
-                ></textarea>
-              </div>
-              <button type='button' className='btn-yellow' onClick={sendEmail}>
-                Enviar
-              </button>
-            </form>
-
-          </div>
-          <div className='direccion-container'>
-            <Location></Location>
-
-          </div>
+        <div className='direccion-container'>
+          <h2 className='pageSubHeader'>Visitanos</h2>
+          <Location></Location>
         </div>
+
+        <div className="contactDiv" id="contact">
+          <h2 className='pageSubHeader'>Ventas e Informes</h2>
+          <form ref={form} className='messageForm'>
+            <div className="infoDiv" >
+
+              <div className="formInputDiv">
+                <label htmlFor='name' className='inputLabel'>Nombre *</label>
+                <input
+                  type="text"
+                  className="formInput"
+                  name="name"/>
+              </div>
+
+              <div className="formInputDiv">
+                <label htmlFor='email' className='inputLabel'>Email *</label>
+                <input
+                  type="email"
+                  className="formInput"
+                  name= 'email'/>
+              </div>
+
+              <div className="formInputDiv">
+                <Select
+                  name="servicio"
+                  defaultValue={{label:'Selecciona un servicio', value:'Selecciona un servicio' }}
+                  options = {options}
+                />
+              </div>
+
+            </div>
+            <div className='messageDiv'>
+              <label htmlFor='message' className='inputLabel'>Medidas y mas informacion </label>
+              <textarea
+                name='message'
+                className='textarea'
+              ></textarea>
+            </div>
+
+            <button type='button' className='btn-yellow' onClick={sendEmail}>
+              Enviar
+            </button>
+
+          </form>
+        </div>
+      </div>
     </div>
   );
 }
