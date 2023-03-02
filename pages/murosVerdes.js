@@ -28,22 +28,37 @@ const murosVerdes = ({products}) => {
     );
   }, [query, products]);
 
+  const returnFilter = () => {
+
+      if (filtered.length === 0) {
+        return (
+        <div className='products-heading'>
+          <h3>No se encontro su busqueda</h3>
+        </div>
+        )
+      } else {
+        return (
+          <div className="categoryContainer">
+            <div className='categoryDiv'>
+              {filtered?.map((product) =>
+                <div className='productDiv' key={product._id}>
+                  <Product product = {product}/>
+                </div>
+                )}
+            </div>
+          </div>
+        )
+      }
+    }
   return (
-    <>
+    <div>
       <div className='products-heading'>
         <h2>Muros Verdes Artificiales HDPE</h2>
-        <p>Ideales para usos interiores y exteriores. Pueden utilizarse para proteger y recubrir bardas de concreto</p>
+
       </div>
-      <div className="categoryContainer">
-        <div className='categoryDiv'>
-          {filtered?.map((product) =>
-            <div className='productDiv'>
-              <Product key={product._id} product = {product}/>
-            </div>
-            )}
-        </div>
-      </div>
-    </>
+
+      {returnFilter()}
+    </div>
   )
 }
 

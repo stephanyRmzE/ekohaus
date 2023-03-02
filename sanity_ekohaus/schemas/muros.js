@@ -38,7 +38,17 @@ export default {
       decimalSeparator: ',',
       thousandSeparator: '.',
       prefix: '$ ',
-  },
+      },
+    },
+    {
+      name: 'stock',
+      title: 'Stock',
+      type: 'number',
+    },
+    {
+      name: 'medidas',
+      title: 'Medidas',
+      type: 'string',
     },
     {
       name: 'details',
