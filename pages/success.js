@@ -1,13 +1,23 @@
 import React, {useState, useEffect} from 'react'
 import Link from 'next/link'
 import {BsBagCheckFill} from 'react-icons/bs'
-
 import {useStateContext} from '../context/StateContext'
 import { runConfetti } from '../lib/utils'
-
+import { useRouter } from 'next/router';
 
 
 const Success = () => {
+  const {
+    query: { session_id },
+  } = useRouter();
+  useEffect(() => {
+    fetch(`/api/checkout_sessions/${session_id}`)
+                .then((response) => response.json())
+                .then((data) => console.log(data));
+  },[,])
+
+
+
   const { setCartItems, setTotalPrice, setTotalQuantities} = useStateContext();
 
   useEffect(() => {

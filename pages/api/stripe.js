@@ -33,13 +33,15 @@ export default async function handler(req, res) {
 
         }),
 
-        success_url: `${req.headers.origin}/success`,
+        success_url: `${req.headers.origin}/success?session_id={CHECKOUT_SESSION_ID}"`,
         cancel_url: `${req.headers.origin}/canceled`,
       }
 
       // Create Checkout Sessions from body params.
       const session = await stripe.checkout.sessions.create(params);
+
       res.status(200).json(session)
+
     } catch (err) {
       res.status(err.statusCode || 500).json(err.message);
     }
@@ -47,7 +49,5 @@ export default async function handler(req, res) {
     res.setHeader('Allow', 'POST');
     res.status(405).end('Method Not Allowed');
   }
-
-
 
 }
