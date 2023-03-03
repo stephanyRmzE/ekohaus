@@ -1142,6 +1142,22 @@ a {
   border: 0;
 }
 
+.showHeader{
+  text-align: center;
+  margin: 0 auto 2em;
+  color: #2f4e24;
+}
+
+.showColumns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  height: 75vh;
+  margin: 0 3em 3em;
+}
+
+
+
 @media screen and (max-width:1220px) {
 
 .nav-menu {
@@ -1323,7 +1339,9 @@ a {
     color: white;
   }
 
-
+  .showColumns {
+    height: 65vh;
+  }
 
 }
 
@@ -1572,11 +1590,15 @@ a {
   }
 
   .footer{
-    padding: 0;
+    padding: 0 10px;
     grid-gap: 0;
   }
   .footer-container h2{
     font-size: 20px;
   }
 
+  .showColumns {
+    height: 40vh;
+    margin: 0 1em;
+  }
 }

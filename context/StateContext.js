@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState } from "react";
 import { toast } from "react-hot-toast";
 import {client} from '../lib/client.js'
 
@@ -10,7 +10,7 @@ export const StateContext = (({children}) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
-  const [showMailLing, setShowMailing] = useState(false);
+  const [foundCartItems, setFoundCartItems] = useState([]);
 
   let foundProduct
 
@@ -89,6 +89,13 @@ export const StateContext = (({children}) => {
     });
   }
 
+  const findCartItems= () => {
+    setFoundCartItems([...cartItems])
+  }
+
+
+
+
   return(
     <Context.Provider
       value ={{
@@ -106,8 +113,9 @@ export const StateContext = (({children}) => {
         setCartItems,
         setTotalPrice,
         setTotalQuantities,
-        showMailLing,
-        setShowMailing
+        foundCartItems,
+        setFoundCartItems,
+        findCartItems,
       }}
       >
       {children}
