@@ -33,10 +33,11 @@
     "react-hot-toast": "^2.2.0",
     "react-icons": "^4.3.1",
     "react-photo-gallery-next": "^8.0.1",
-    "react-rainbow-components": "^1.32.0",
+    "react-rainbow-components": "^1.3.1",
     "react-responsive-carousel": "^3.2.23",
     "react-select": "^5.7.0",
     "react-social-icons": "^5.15.0",
     "stripe": "^8.209.0"
   }
+
 }
