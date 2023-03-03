@@ -32,7 +32,7 @@ export default {
       type: 'number',
       validation: (Rule) => Rule.positive(),
       options: {
-      decimalScale: 2,
+      decimalScale: 1,
       fixedDecimalScale: true,
       allowNegative: false,
       decimalSeparator: ',',

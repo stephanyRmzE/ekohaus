@@ -7,26 +7,25 @@ import { useRouter } from 'next/router';
 
 
 const Success = () => {
+  const {  setCartItems, setTotalPrice, setTotalQuantities} = useStateContext();
+  const [checkout, setCheckout] = useState([])
   const {
     query: { session_id },
   } = useRouter();
+
   useEffect(() => {
+
     fetch(`/api/checkout_sessions/${session_id}`)
                 .then((response) => response.json())
-                .then((data) => console.log(data));
-  },[,])
+                .then((data) => setCheckout(data));
 
-
-
-  const { setCartItems, setTotalPrice, setTotalQuantities} = useStateContext();
-
-  useEffect(() => {
    localStorage.clear();
    setCartItems([]);
    setTotalPrice(0);
    setTotalQuantities(0);
    runConfetti();
   }, [])
+
 
 
   return (

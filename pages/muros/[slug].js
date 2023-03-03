@@ -6,9 +6,12 @@ import Product from '../../components/Product'
 import {useStateContext} from '../../context/StateContext'
 
 const MuroDetails = ({ product, products }) => {
-  const {image, name, details, price} = product;
+  const {image, name, details, medidas, price} = product;
   const [index, setIndex] = useState(0);
   const { decQty, incQty, qty, onAdd, cartItems} = useStateContext();
+
+
+
   return (
     <div>
       <div className="product-detail-container">
@@ -36,6 +39,10 @@ const MuroDetails = ({ product, products }) => {
           <h1>{name}</h1>
           <h4>Descripcion:</h4>
           <p>{details}</p>
+          <h4>Medidas:</h4>
+          <p>{medidas}</p>
+          <h4>Envio:</h4>
+          <p>No incluye envio</p>
           <p className="price">${price}</p>
           <div className="quantity">
             <h3>Cantidad:</h3>

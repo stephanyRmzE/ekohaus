@@ -8,13 +8,12 @@ import getStripe from '../lib/getStripe'
 
 const Cart = () => {
   const cartRef = useRef();
-  const { totalPrice, totalQuantities, cartItems, setShowCart, toogleCartItemQuantity, onRemove} = useStateContext();
-
+  const { totalPrice, totalQuantities, cartItems, setShowCart, toogleCartItemQuantity, onRemove} = useStateContext()
   const handleCheckout = async () => {
 
     const stripe = await getStripe();
 
-    const response = await fetch('/api/stripe', {
+    const response = await fetch('/api/checkout_sessions', {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(cartItems),
@@ -25,7 +24,7 @@ const Cart = () => {
     toast.loading('Redireccionando')
 
     stripe.redirectToCheckout({sessionId: data.id})
-    
+
   }
 
   return (
@@ -77,7 +76,7 @@ const Cart = () => {
                       </span>
                     </p>
                   </div>
-                  <button type='button'className="remove-item" onClick={() => onRemove(item._id)} >
+                  <button type='button'className="remove-item" onClick={() => findCartItems()} >
                     <TiDeleteOutline/>
                   </button>
                 </div>
@@ -95,6 +94,7 @@ const Cart = () => {
               <button type='button'className="btn-yellow" onClick={handleCheckout}>
                 Pagar
               </button>
+
             </div>
           </div>
         )}
