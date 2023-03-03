@@ -24,7 +24,7 @@ const Success = () => {
    setTotalPrice(0);
    setTotalQuantities(0);
    runConfetti();
-  }, [])
+  }, [session_id, setCartItems, setTotalPrice, setTotalQuantities ])
 
 
 

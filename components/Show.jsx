@@ -11,7 +11,7 @@ const Show = ({ galleryShow:{image}}) => {
     setPhotos(image?.map((item,i) => {
       const img = item.asset._ref;
       return img.replace('image-', 'https://cdn.sanity.io/images/wej343gq/production/').replace('-png', '.png');
-      }))}, []);
+      }))}, [image]);
   const sanityIoImageLoader = ({ src, quality }) => {
   return `https://cdn.sanity.io/images/wej343gq/production/${src}&q=${quality || 75}`
 }
@@ -25,6 +25,7 @@ const Show = ({ galleryShow:{image}}) => {
             {photos?.map((item,i) => (
 
                   <Image
+                    alt='nuestro trabajo'
                     key={i}
                     src={item}
                     width='100'
