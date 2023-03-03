@@ -1,7 +1,7 @@
 import React from 'react'
 import VideoFrame from '../components/VideoFrame'
 
-const instalacion = () => {
+const Instalacion = () => {
   return (
     <div className='instalacion-container'>
 

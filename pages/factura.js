@@ -13,7 +13,7 @@ const Select = dynamic(() => import('react-select'), {
     ssr: false
 });
 
-function factura() {
+function Factura() {
   const optUso = [
     { value: "G01 Adquisición de mercancias", label: "G01 Adquisición de mercancias" },
     { value: "G03 Gastos en General", label: "G03 Gastos en General" },
@@ -239,4 +239,4 @@ function factura() {
   );
 }
 
-export default factura
+export default Factura
