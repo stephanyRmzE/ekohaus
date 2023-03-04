@@ -68,7 +68,10 @@ export const Navbar = () => {
             >Contactanos</Link>
 
               <div className="dropdown-content">
-                <a className='dropdown-link' href='/factura'>Facturas</a>
+                <Link
+                  href='/factura'
+                  className ="dropdown-link"
+                  >Facturas</Link>
               </div>
 
             </li>
