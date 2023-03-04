@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {useStateContext} from '../context/StateContext'
-import {Mailing} from './'
+import {Mailing} from './Index'
 
 import { urlFor } from '../lib/client'
 
@@ -18,7 +18,7 @@ const HeroBanner = ({heroBanner}) => {
                     backgroundRepeat: 'no-repeat'
                   }}>
 
-        
+
         <p className="hero-small-title">{heroBanner.smallText}</p>
         <h3 className='hero-title'>{heroBanner.midText}</h3>
 

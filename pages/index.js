@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {client} from '../lib/client.js'
 import { Product, HeroBanner, Show} from '../components/index'
 import useEmblaCarousel from 'embla-carousel-react'
@@ -8,12 +8,20 @@ const OPTIONS = { slidesToScroll: 'auto', containScroll: 'trimSnaps' }
 
 const Index = ({ murosData,  bannerData, galleryShow } ) => {
   const [emblaRef] = useEmblaCarousel(OPTIONS)
+  const [loading, setLoading] = useState(true);
+
+  if (bannerData.length > 0) {
+    setLoading(false)
+  }
 
 
   return (
     <div>
+      {loading ? (
+        <Spinner />
+      ):
       <HeroBanner heroBanner = {bannerData.length && bannerData[0]}/>
-
+      }
       <div className='products-heading'>
         <h2>Muro Verde Artificial</h2>
         <p>Ideales para usos interiores y exteriores. Pueden utilizarse para proteger y recubrir bardas de concreto</p>
