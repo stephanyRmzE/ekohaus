@@ -73,4 +73,4 @@ export async function getStaticProps() {
   return { props: { products } }
 }
 
-export default murosVerdes
+export default MurosVerdes

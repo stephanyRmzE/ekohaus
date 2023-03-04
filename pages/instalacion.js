@@ -23,4 +23,4 @@ const Instalacion = () => {
   )
 }
 
-export default instalacion
+export default Instalacion

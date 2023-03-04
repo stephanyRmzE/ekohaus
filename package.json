@@ -3,10 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "@bit/nexxtway.react-rainbow.date-picker": "^1.10.0",
@@ -24,6 +23,7 @@
     "embla-carousel-react": "^7.0.9",
     "mui-tel-input": "^3.1.1",
     "next": "12.1.0",
+    "next-remove-imports": "^1.0.10",
     "next-sanity-image": "^3.2.1",
     "react": "17.0.2",
     "react-bootstrap": "^2.7.2",
@@ -39,5 +39,4 @@
     "react-social-icons": "^5.15.0",
     "stripe": "^8.209.0"
   }
-
 }
