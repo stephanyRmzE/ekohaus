@@ -102,7 +102,7 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getServerSideProps({ params: {slug}}) {
+export async function getStaticProps({ params: {slug}}) {
   // Fetch data from external API
   const productQuery = `*[_type == "muros" && slug.current == '${slug}'][0]`
   const product = await client.fetch(productQuery)
