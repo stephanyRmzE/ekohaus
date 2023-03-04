@@ -3,10 +3,9 @@ import {client} from '../lib/client.js'
 import { Product, HeroBanner, Show} from '../components/index'
 import useEmblaCarousel from 'embla-carousel-react'
 
-
 const OPTIONS = { slidesToScroll: 'auto', containScroll: 'trimSnaps' }
 
-const Home = ({ murosData,  bannerData, galleryShow } ) => {
+export default function Index({ murosData,  bannerData, galleryShow } ) {
   const [emblaRef] = useEmblaCarousel(OPTIONS)
   const [loading, setLoading] = useState(true);
 
@@ -16,6 +15,7 @@ const Home = ({ murosData,  bannerData, galleryShow } ) => {
 
   return (
     <div>
+      <p>hola</p>
       {loading ? (
         <Spinner />
       ):
@@ -42,7 +42,7 @@ const Home = ({ murosData,  bannerData, galleryShow } ) => {
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   // Fetch data from external API
   const murosQuery = '*[_type == "muros"]'
   const murosData = await client.fetch(murosQuery)
@@ -58,5 +58,3 @@ export async function getServerSideProps() {
   return { props: { murosData, bannerData, galleryShow} }
 }
 
-
-export default Home
