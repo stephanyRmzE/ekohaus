@@ -5,7 +5,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 
 const OPTIONS = { slidesToScroll: 'auto', containScroll: 'trimSnaps' }
 
-export default function Index({ murosData,  bannerData, galleryShow } ) {
+export default function Home({ murosData,  bannerData, galleryShow } ) {
   const [emblaRef] = useEmblaCarousel(OPTIONS)
   const [loading, setLoading] = useState(true);
 
@@ -57,4 +57,3 @@ export async function getStaticProps() {
   // Pass data to the page via props
   return { props: { murosData, bannerData, galleryShow} }
 }
-
