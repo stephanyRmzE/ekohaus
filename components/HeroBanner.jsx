@@ -1,12 +1,11 @@
 import React, {useState} from 'react'
 import {useStateContext} from '../context/StateContext'
-import {Mailing} from './Index'
+
 
 import { urlFor } from '../lib/client'
 
 const HeroBanner = ({heroBanner}) => {
 
-  const { showMailLing, setShowMailing } = useStateContext();
 
   return (
     <div>

@@ -6,14 +6,13 @@ import useEmblaCarousel from 'embla-carousel-react'
 
 const OPTIONS = { slidesToScroll: 'auto', containScroll: 'trimSnaps' }
 
-const Index = ({ murosData,  bannerData, galleryShow } ) => {
+const Home = ({ murosData,  bannerData, galleryShow } ) => {
   const [emblaRef] = useEmblaCarousel(OPTIONS)
   const [loading, setLoading] = useState(true);
 
   if (bannerData.length > 0) {
     setLoading(false)
   }
-
 
   return (
     <div>
@@ -60,4 +59,4 @@ export async function getServerSideProps() {
 }
 
 
-export default Index
+export default Home
