@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start -H 0.0.0.0 -p ${PORT: -8080}"
   },
   "dependencies": {
     "@bit/nexxtway.react-rainbow.date-picker": "^1.10.0",
