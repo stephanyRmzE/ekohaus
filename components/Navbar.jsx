@@ -1,14 +1,13 @@
 import React, {useState} from 'react'
 import Link from 'next/link'
 import {AiOutlineShopping, AiOutlineSearch} from 'react-icons/ai'
-import {Cart} from './Index'
+import {Cart} from '.'
 import {useStateContext} from '../context/StateContext'
 import { FaBars, FaTimes } from 'react-icons/fa';
 import {useRouter} from 'next/router'
 
 
-export const Navbar = () => {
-
+const Navbar = () => {
   const { showCart, setShowCart, totalQuantities } = useStateContext();
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
@@ -116,3 +115,5 @@ export const Navbar = () => {
 
   )
 }
+
+export default Navbar

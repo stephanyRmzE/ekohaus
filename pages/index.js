@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {client} from '../lib/client.js'
-import { Product, HeroBanner, Show} from '../components/index'
+import { Product, HeroBanner, Show, Spinner} from '../components/index'
 import useEmblaCarousel from 'embla-carousel-react'
 
 const OPTIONS = { slidesToScroll: 'auto', containScroll: 'trimSnaps' }
@@ -9,9 +9,14 @@ export default function Home({ murosData,  bannerData, galleryShow } ) {
   const [emblaRef] = useEmblaCarousel(OPTIONS)
   const [loading, setLoading] = useState(true);
 
-  if (bannerData.length > 0) {
+
+
+  useEffect(() => {
+    if (bannerData.length > 0) {
     setLoading(false)
-  }
+    }
+    }, [])
+
 
   return (
     <div>

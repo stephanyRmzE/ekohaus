@@ -2,7 +2,7 @@ import React from 'react'
 import {client} from '../lib/client.js'
 import { urlFor} from '../lib/client'
 
-const Servicios = ({cocina}) => {
+function Servicios({cocina}) {
   const {image, name} = cocina;
   return (
     <div className='servicios-container'>
@@ -15,6 +15,7 @@ const Servicios = ({cocina}) => {
     </div>
   )
 }
+
 
 export async function getStaticProps() {
   // Fetch data from external API

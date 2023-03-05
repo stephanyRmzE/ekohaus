@@ -1,7 +1,4 @@
-import React, {useState} from 'react'
-import {useStateContext} from '../context/StateContext'
-
-
+import React from 'react'
 import { urlFor } from '../lib/client'
 
 const HeroBanner = ({heroBanner}) => {

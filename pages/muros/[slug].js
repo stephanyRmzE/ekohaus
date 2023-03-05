@@ -1,16 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
-
 import {client, urlFor} from '../../lib/client'
 import Product from '../../components/Product'
 import {useStateContext} from '../../context/StateContext'
 
-const MuroDetails = ({ product, products }) => {
+
+function MuroDetails({ product, products }) {
   const {image, name, details, medidas, price} = product;
   const [index, setIndex] = useState(0);
-  const { decQty, incQty, qty, onAdd, cartItems} = useStateContext();
-
-
+  const { decQty, incQty, qty, onAdd} = useStateContext();
 
   return (
     <div>
@@ -79,6 +77,8 @@ const MuroDetails = ({ product, products }) => {
     </div>
   )
 }
+
+
 
 export async function getStaticPaths() {
   const Query = `*[_type == "muros"] {

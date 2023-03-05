@@ -6,7 +6,6 @@ import Link from 'next/link'
 
 function Contact() {
 
-
   const options = [
     { value: "Cotizacion de Muro Verde", label: "Cotizacion de Muro Verde" },
     { value: "Cotizacion de Pasto Artificial", label: "Cotizacion de Pasto Artificial" },
@@ -36,7 +35,7 @@ function Contact() {
 
       <Link
                   href='/factura'
-                  
+
                   >Facturas</Link>
       <div className="contact-map">
 

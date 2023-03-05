@@ -3,7 +3,8 @@ import {client} from '../lib/client.js'
 import { Product} from '../components/index'
 import { useRouter } from 'next/router';
 
-const MurosVerdes = ({products}) => {
+
+function MurosVerdes({products}) {
   const router = useRouter();
 
   // Get the query parameter from the URL

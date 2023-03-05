@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React, {useRef} from 'react'
 import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping } from 'react-icons/ai';
 import {TiDeleteOutline} from 'react-icons/ti'
