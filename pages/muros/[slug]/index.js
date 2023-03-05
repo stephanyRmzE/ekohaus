@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
-import {client, urlFor} from '../../lib/client'
-import Product from '../../components/Product'
-import {useStateContext} from '../../context/StateContext'
+import {client, urlFor} from '../../../lib/client'
+import Product from '../../../components/Product'
+import {useStateContext} from '../../../context/StateContext'
 
 
 function MuroDetails({ product, products }) {
