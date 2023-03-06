@@ -9,8 +9,6 @@ function Home({ murosData,  bannerData, galleryShow } ) {
   const [emblaRef] = useEmblaCarousel(OPTIONS)
   const [loading, setLoading] = useState(true);
 
-
-
   useEffect(() => {
     if (bannerData.length > 0) {
     setLoading(false)
@@ -20,7 +18,7 @@ function Home({ murosData,  bannerData, galleryShow } ) {
 
   return (
     <div>
-      <p>hola</p>
+
       {loading ? (
         <Spinner />
       ):
