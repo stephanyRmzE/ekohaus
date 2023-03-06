@@ -7,7 +7,7 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 import {useRouter} from 'next/router'
 
 
-export const Navbar = () => {
+const Navbar = () => {
 
   const { showCart, setShowCart, totalQuantities } = useStateContext();
   const [click, setClick] = useState(false);
@@ -113,3 +113,5 @@ export const Navbar = () => {
 
   )
 }
+
+export default Navbar
