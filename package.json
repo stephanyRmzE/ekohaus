@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node server.js",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start -H 0.0.0.0 -p ${PORT:-8080}",
     "lint": "next lint"
   },
   "dependencies": {
-    "@bit/nexxtway.react-rainbow.date-picker": "^1.10.0",
+    
     "@emailjs/browser": "^3.10.0",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
@@ -30,6 +30,7 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.2",
     "react-currency-input-field": "^3.6.10",
+    "react-datepicker": "^4.10.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.2",
     "react-hot-toast": "^2.2.0",
