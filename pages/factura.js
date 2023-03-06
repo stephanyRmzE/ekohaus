@@ -4,10 +4,8 @@ import emailjs from '@emailjs/browser';
 import { MuiTelInput, matchIsValidTel } from 'mui-tel-input'
 import CurrencyInput from 'react-currency-input-field';
 import dynamic from 'next/dynamic';
-
-const DatePicker = dynamic(() => import('react-rainbow-components/components/DatePicker'), {
-    ssr: false
-});
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Select = dynamic(() => import('react-select'), {
     ssr: false
@@ -52,7 +50,6 @@ function Factura() {
     setValue(value);
   };
 
-  const maxDate = new Date();
 
   const formFactura = useRef();
 
@@ -64,6 +61,8 @@ function Factura() {
           console.log(error.text);
       });
   };
+  const maxDate = new Date();
+  const [startDate, setStartDate] = useState(new Date());
 
   return (
 
@@ -174,10 +173,11 @@ function Factura() {
                     rules={{ required: true }}
                     render={({ field }) => (
                       <DatePicker
+                        showIcon
+                        selected={startDate}
                         name = {field.name}
                         maxDate={maxDate}
-                        onChange={(date) => field.onChange(date)}
-                        value= {field.value}
+                        onChange={(date) => setStartDate(date)}
                       />
                       )}
                   />

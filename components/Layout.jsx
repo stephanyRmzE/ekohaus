@@ -37,7 +37,6 @@ const Layout = ({children}) => {
         <Navbar/>
       </header>
       <main className="main-container">
-        <div> holaaaaaa</div>
         {children}
       </main>
 
