@@ -1,5 +1,9 @@
+
+/** @type {import('next').NextConfig} */
 const removeImports = require('next-remove-imports')()
-module.exports = removeImports({
+
+const nextConfig = removeImports({
+  reactStrictMode: true,
    images: {
 		domains: ['cdn.sanity.io'],
 		loader: 'custom'
@@ -9,4 +13,8 @@ module.exports = removeImports({
   webpack(config, options) {
     return config
   },
-});
+
+})
+
+module.exports = nextConfig
+

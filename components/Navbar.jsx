@@ -8,6 +8,7 @@ import {useRouter} from 'next/router'
 
 
 const Navbar = () => {
+
   const { showCart, setShowCart, totalQuantities } = useStateContext();
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
