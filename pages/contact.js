@@ -33,10 +33,6 @@ function Contact() {
 
     <div className='contact-container' id= 'contact'>
 
-      <Link
-                  href='/factura'
-
-                  >Facturas</Link>
       <div className="contact-map">
 
         <div className='direccion-container'>
