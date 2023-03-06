@@ -4,7 +4,6 @@ import {client, urlFor} from '../../../lib/client'
 import Product from '../../../components/Product'
 import {useStateContext} from '../../../context/StateContext'
 
-
 function MuroDetails({ product, products }) {
   const {image, name, details, medidas, price} = product;
   const [index, setIndex] = useState(0);
@@ -98,9 +97,10 @@ export async function getStaticPaths() {
   return {
 
     paths,
-    fallback: 'blocking', // can also be true or 'blocking'
+    fallback: false, // can also be true or 'blocking'
   }
 }
+
 
 export async function getStaticProps({ params: {slug}}) {
   // Fetch data from external API
