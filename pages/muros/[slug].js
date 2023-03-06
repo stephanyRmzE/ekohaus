@@ -1,13 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
-import {client, urlFor} from '../../../lib/client'
-import Product from '../../../components/Product'
-import {useStateContext} from '../../../context/StateContext'
 
-function MuroDetails({ product, products }) {
-  const {image, name, details, medidas, price} = product;
+import {client, urlFor} from '../../lib/client'
+import Product from '../../components/Product'
+import {useStateContext} from '../../context/StateContext'
+
+const MurosDetails = ({ product, products }) => {
+  const {image, name, details, price} = product;
   const [index, setIndex] = useState(0);
-  const { decQty, incQty, qty, onAdd} = useStateContext();
+  const { decQty, incQty, qty, onAdd, cartItems} = useStateContext();
 
   return (
     <div>
@@ -36,10 +37,6 @@ function MuroDetails({ product, products }) {
           <h1>{name}</h1>
           <h4>Descripcion:</h4>
           <p>{details}</p>
-          <h4>Medidas:</h4>
-          <p>{medidas}</p>
-          <h4>Envio:</h4>
-          <p>No incluye envio</p>
           <p className="price">${price}</p>
           <div className="quantity">
             <h3>Cantidad:</h3>
@@ -77,10 +74,8 @@ function MuroDetails({ product, products }) {
   )
 }
 
-
-
 export async function getStaticPaths() {
-  const Query = `*[_type == "muros"] {
+  const Query = `*[_type == "pasto"] {
     slug {
       current
     }
@@ -97,10 +92,9 @@ export async function getStaticPaths() {
   return {
 
     paths,
-    fallback: false, // can also be true or 'blocking'
+    fallback: 'blocking', // can also be true or 'blocking'
   }
 }
-
 
 export async function getStaticProps({ params: {slug}}) {
   // Fetch data from external API
@@ -113,4 +107,4 @@ export async function getStaticProps({ params: {slug}}) {
   return { props: { product, products } }
 }
 
-export default MuroDetails
+export default MurosDetails
