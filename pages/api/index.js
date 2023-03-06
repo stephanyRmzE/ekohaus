@@ -37,7 +37,7 @@ export default async function handler(req, res) {
 
         }),
 
-        success_url: `${req.headers.origin}/success?session_id={CHECKOUT_SESSION_ID}"`,
+        success_url: `${req.headers.origin}/success`,
         cancel_url: `${req.headers.origin}/canceled`,
       }
 
