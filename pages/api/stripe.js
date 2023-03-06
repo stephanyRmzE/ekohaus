@@ -13,7 +13,8 @@ export default async function handler(req, res) {
         billing_address_collection: 'auto',
         shipping_address_collection: {allowed_countries: ['MX']},
         shipping_options:[
-          {shipping_rate: 'shr_1Mhed0C5ZdZTJtKKTCJVMK0r'},
+          {shipping_rate: 'shr_1MhegFC5ZdZTJtKKmIYUfpCD'},
+
         ],
         line_items: req.body.map((item) => {
           const img = item.image[0].asset._ref;
@@ -37,7 +38,9 @@ export default async function handler(req, res) {
 
         }),
 
+
         success_url: `${req.headers.origin}/success`,
+
         cancel_url: `${req.headers.origin}/canceled`,
       }
 
