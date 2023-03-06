@@ -1,9 +1,10 @@
 import React, {useEffect} from 'react'
 import Head from 'next/head'
+
 import Navbar  from './Navbar'
+
 import Footer from './Footer'
 import {useStateContext} from '../context/StateContext'
-import {SearchBar} from './SearchBar'
 
 
 const Layout = ({children}) => {
@@ -36,6 +37,7 @@ const Layout = ({children}) => {
         <Navbar/>
       </header>
       <main className="main-container">
+        <div> holaaaaaa</div>
         {children}
       </main>
 

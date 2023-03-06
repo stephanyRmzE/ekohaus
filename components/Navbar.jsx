@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Link from 'next/link'
 import {AiOutlineShopping, AiOutlineSearch} from 'react-icons/ai'
-import {Cart} from './'
+import {Cart} from '.'
 import {useStateContext} from '../context/StateContext'
 import { FaBars, FaTimes } from 'react-icons/fa';
 import {useRouter} from 'next/router'
@@ -68,7 +68,10 @@ const Navbar = () => {
             >Contactanos</Link>
 
               <div className="dropdown-content">
-                <a className='dropdown-link' href='/factura'>Facturas</a>
+                <Link
+                  href='/factura'
+                  className ="dropdown-link"
+                  >Facturas</Link>
               </div>
 
             </li>

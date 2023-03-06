@@ -2,9 +2,9 @@ import Location from '../components/Location'
 import {useRef} from "react";
 import Select from "react-select";
 import emailjs from '@emailjs/browser';
+import Link from 'next/link'
 
 function Contact() {
-
 
   const options = [
     { value: "Cotizacion de Muro Verde", label: "Cotizacion de Muro Verde" },
@@ -32,6 +32,11 @@ function Contact() {
   return (
 
     <div className='contact-container' id= 'contact'>
+
+      <Link
+                  href='/factura'
+
+                  >Facturas</Link>
       <div className="contact-map">
 
         <div className='direccion-container'>

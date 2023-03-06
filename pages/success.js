@@ -5,8 +5,7 @@ import {useStateContext} from '../context/StateContext'
 import { runConfetti } from '../lib/utils'
 import { useRouter } from 'next/router';
 
-
-const Success = () => {
+function Success() {
   const {  setCartItems, setTotalPrice, setTotalQuantities} = useStateContext();
   const [checkout, setCheckout] = useState([])
   const {
@@ -24,7 +23,7 @@ const Success = () => {
    setTotalPrice(0);
    setTotalQuantities(0);
    runConfetti();
-  }, [])
+  }, [session_id, setCartItems, setTotalPrice, setTotalQuantities ])
 
 
 

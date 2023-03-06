@@ -1,7 +1,8 @@
 import React from 'react'
 import VideoFrame from '../components/VideoFrame'
 
-const instalacion = () => {
+
+function Instalacion() {
   return (
     <div className='instalacion-container'>
 
@@ -23,4 +24,4 @@ const instalacion = () => {
   )
 }
 
-export default instalacion
+export default Instalacion
