@@ -1562,14 +1562,27 @@ a {
       width: 100%;
     }
 
+  .product-card {
+    width: 93vw;
+    height: 49vh;
+    margin: 1%;
+  }
+
+  .product-image {
+    width: 99%;
+    height: 75%;
+  }
+
   .products-heading h2 {
     font-size: 30px;
     font-weight: 800;
   }
 
   .products-heading p {
-    margin-top: 1rem;
+    margin: 1em 1em;
     text-align: justify;
+    font-weight: 400;
+    font-size: 20px;
   }
 
   .contact-map {
@@ -1617,8 +1630,12 @@ a {
     font-size: 20px;
   }
 
+  .showHeader {
+    margin: 2em auto;
+  }
+
   .showColumns {
-    height: 40vh;
+    height: 35vh;
     margin: 0 1em;
   }
 }
