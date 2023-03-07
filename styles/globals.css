@@ -305,6 +305,9 @@ span.text-red {
   column-gap: 2rem;
   height: 50vh;
 }
+.productDiv {
+  max-width: 250px;
+}
 
 .product-card {
   border-radius: 5px;
@@ -1642,6 +1645,6 @@ a {
   }
 
   .productDiv{
-    width: 80vw;
+    max-width: 80vw;
   }
 }
