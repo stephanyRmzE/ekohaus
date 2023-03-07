@@ -75,7 +75,7 @@ const MurosDetails = ({ product, products }) => {
 }
 
 export async function getStaticPaths() {
-  const Query = `*[_type == "pasto"] {
+  const Query = `*[_type == "muros"] {
     slug {
       current
     }

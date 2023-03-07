@@ -1,13 +1,15 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Link from 'next/link'
-
 import { urlFor} from '../lib/client'
 
-const Product = ({ product: { image, name, slug, price, _type} }) => {
+
+
+function Product({ product }) {
+  const {image, name, price, _type, slug} = product;
 
   return (
-    <div>
-      <Link href={`/${_type}/${slug.current}`}>
+     <div>
+      <Link href={`/${_type}/${slug.current}`} passHref>
         <div className='product-card'>
           <img
           src={urlFor( image && image[0])}
