@@ -19,7 +19,9 @@ function Home({ murosData,  bannerData, galleryShow } ) {
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container">
             {murosData?.map((product) =>
-              <Product key={product._id} product = {product}/>
+              <div className='productDiv' key={product._id}>
+              <Product product = {product}/>
+              </div>
             )}
           </div>
         </div>

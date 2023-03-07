@@ -1636,4 +1636,12 @@ a {
     height: 35vh;
     margin: 0 1em;
   }
+
+  .embla{
+    max-width: 80vw;
+  }
+
+  .productDiv{
+    width: 100%;
+  }
 }
