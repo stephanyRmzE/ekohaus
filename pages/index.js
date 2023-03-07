@@ -35,7 +35,7 @@ function Home({ murosData,  bannerData, galleryShow } ) {
 
 export async function getStaticProps() {
   // Fetch data from external API
-  const murosQuery = '*[_type == "muros"]'
+  const murosQuery = '*[_type == "muros"]| order(lower(name) asc)'
   const murosData = await client.fetch(murosQuery)
 
   const bannerQuery = '*[_type == "banner"]'

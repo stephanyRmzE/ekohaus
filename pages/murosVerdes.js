@@ -43,7 +43,7 @@ function MurosVerdes({products}) {
             <div className='categoryDiv'>
               {filtered?.map((product) =>
                 <div className='productDiv' key={product._id}>
-                  <Product product = {product}/>
+                  <Product product = {product} />
                 </div>
                 )}
             </div>
@@ -68,7 +68,7 @@ function MurosVerdes({products}) {
 export async function getStaticProps() {
   // Fetch data from external API
 
-  const productsQuery = '*[_type == "muros"]'
+  const productsQuery = '*[_type == "muros"] | order(lower(name) asc)'
   const products = await client.fetch(productsQuery)
 
   return { props: { products } }

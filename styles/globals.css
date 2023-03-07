@@ -286,9 +286,6 @@ span.text-red {
   justify-content: center;
 }
 
-.productDiv{
-  margin: 1em 1rem ;
-}
 
 .embla {
   display: block;
@@ -317,7 +314,7 @@ span.text-red {
   transform: scale(1, 1);
   transition: transform 0.5s ease;
   color: #324d67;
-
+  margin: 2%;
 }
 
 .product-card:hover {
@@ -331,6 +328,7 @@ span.text-red {
   background-color: #ebebeb;
   transform: scale(1, 1);
   transition: transform 0.5s ease;
+  width: 99%;
 }
 
 .product-name {
@@ -1152,8 +1150,8 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 5px;
-  height: 75vh;
-  margin: 0 3em 3em;
+  height: 80vh;
+  margin: 0 10% 3em;
 }
 
 
@@ -1538,7 +1536,7 @@ a {
 
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
 
   .video-responsive {
     height: 30vh;
@@ -1563,9 +1561,9 @@ a {
     }
 
   .product-card {
-    width: 93vw;
-    height: 49vh;
-    margin: 1%;
+    width: 100%;
+    height: 45vh;
+    margin: 10px 0;
   }
 
   .product-image {
