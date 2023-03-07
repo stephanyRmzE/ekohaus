@@ -42,9 +42,9 @@ function MurosVerdes({products}) {
           <div className="categoryContainer">
             <div className='categoryDiv'>
               {filtered?.map((product) =>
-                <div className='productDiv' key={product._id}>
-                  <Product product = {product} />
-                </div>
+
+                  <Product product = {product} key={product._id} />
+                
                 )}
             </div>
           </div>
