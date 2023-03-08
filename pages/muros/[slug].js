@@ -1,29 +1,42 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
-
-import {client, urlFor} from '../../lib/client'
+import {client} from '../../lib/client'
 import Product from '../../components/Product'
 import {useStateContext} from '../../context/StateContext'
+import Image from 'next/image'
 
 const MurosDetails = ({ product, products }) => {
   const {image, name, details, price} = product;
   const [index, setIndex] = useState(0);
-  const { decQty, incQty, qty, onAdd, cartItems} = useStateContext();
+  const { decQty, incQty, qty, onAdd} = useStateContext();
+
+  const myLoader = ({ src, width, quality }) => {
+  const newImage = src.replace('image-', 'https://cdn.sanity.io/images/wej343gq/production/').replace('-png', '.png');
+  return `${newImage}?w=${width}&q=${quality || 75}`
+  }
 
   return (
-    <div>
+    <div className="product-detail">
       <div className="product-detail-container">
-        <div>
+        <div >
           <div className="image-container">
-            <img
-              src={urlFor(image && image[index])}
+            <Image
+              alt={name}
+              loader={myLoader}
+              src={image[index].asset._ref}
+              width={500}
+              height={500}
               className="product-detail-image" />
           </div>
           <div className="small-images-container">
             {image?.map((item,i) => (
-              <img
+              <Image
+                alt={name}
                 key={i}
-                src={urlFor(item)}
+                loader={myLoader}
+                src={item.asset._ref}
+                width={100}
+                height={100}
                 className={i === index ?
                   'small-image selected-image' :
                   'small-image'}
@@ -104,7 +117,7 @@ export async function getStaticProps({ params: {slug}}) {
   const productsQuery = '*[_type == "muros"]'
   const products = await client.fetch(productsQuery)
 
-  return { props: { product, products } }
+  return { props: { product, products } ,revalidate: 10}
 }
 
 export default MurosDetails

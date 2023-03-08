@@ -1,9 +1,14 @@
 import React, {useRef} from 'react'
 import PropTypes from "prop-types";
+import Image from 'next/image'
 
 function VideoFrame({embedId}) {
 
   const divRef = useRef(null);
+  const myLoader = ({ src, width, quality }) => {
+
+  return `https://img.youtube.com/vi/${src}/mqdefault.jpg?w=${width}&q=${quality || 75}`
+  }
 
   const onClick = () => {
       const iframe = document.createElement("iframe");
@@ -20,7 +25,7 @@ function VideoFrame({embedId}) {
   };
   return (
     <div ref={divRef} className="video-responsive">
-      <img onClick={onClick} loading="lazy" src={`https://img.youtube.com/vi/${embedId}/mqdefault.jpg`} alt="YouTube Video Thumbnail" width={853} height={480} />
+      <Image onClick={onClick} loader={myLoader} src={embedId} alt="YouTube Video Thumbnail" width={853} height={480} />
     </div>
   )
 }
