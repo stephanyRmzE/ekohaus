@@ -284,6 +284,11 @@ span.text-red {
   gap: 10px;
   grid-template-columns: repeat(auto-fit, 282px);
   justify-content: center;
+
+}
+
+.categoryProduct{
+  max-width: 261px;
 }
 
 
