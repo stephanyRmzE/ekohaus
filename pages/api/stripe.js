@@ -13,7 +13,7 @@ export default async function handler(req, res) {
         billing_address_collection: 'auto',
         shipping_address_collection: {allowed_countries: ['MX']},
         shipping_options:[
-          {shipping_rate: 'shr_1MhegFC5ZdZTJtKKmIYUfpCD'},
+          {shipping_rate: 'shr_1Mhed0C5ZdZTJtKKTCJVMK0r'},
 
         ],
         line_items: req.body.map((item) => {

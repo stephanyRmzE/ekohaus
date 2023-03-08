@@ -20,6 +20,7 @@
     "@stripe/stripe-js": "^1.25.0",
     "bootstrap": "^5.2.3",
     "canvas-confetti": "^1.5.1",
+    "dotenv": "^16.0.3",
     "embla-carousel-react": "^7.0.9",
     "eslint-config-next": "^13.2.3",
     "mui-tel-input": "^3.1.1",
