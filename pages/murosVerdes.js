@@ -44,7 +44,7 @@ function MurosVerdes({products}) {
               {filtered?.map((product) =>
 
                   <Product product = {product} key={product._id} />
-                
+
                 )}
             </div>
           </div>
@@ -71,7 +71,7 @@ export async function getStaticProps() {
   const productsQuery = '*[_type == "muros"] | order(lower(name) asc)'
   const products = await client.fetch(productsQuery)
 
-  return { props: { products } }
+  return { props: { products },revalidate: 10}
 }
 
 export default MurosVerdes

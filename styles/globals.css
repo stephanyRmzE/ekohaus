@@ -305,6 +305,7 @@ span.text-red {
   column-gap: 2rem;
   height: 50vh;
 }
+
 .productDiv {
   max-width: 250px;
 }
@@ -640,6 +641,9 @@ span.text-red {
   transform: scale(1.1, 1.1);
 }
 
+
+
+
 .product-detail-container {
   display: flex;
   gap: 40px;
@@ -652,8 +656,6 @@ span.text-red {
 .product-detail-image {
   border-radius: 5px;
   background-color: #ebebeb;
-  width: 500px;
-  height: 500px;
   cursor: pointer;
   transition: .3s ease-in-out;
 }
@@ -673,8 +675,6 @@ span.text-red {
 .small-image {
   border-radius: 8px;
   background-color: #ebebeb;
-  width: 70px;
-  height: 70px;
   cursor: pointer;
 }
 
@@ -779,15 +779,15 @@ span.text-red {
   text-align: center;
   margin: 50px;
   color: #324d67;
-
   font-size: 28px;
 }
 
 .maylike-products-container {
   display: flex;
-  justify-content: center;
-  gap: 15px;
+  flex-flow: column wrap;
   margin-top: 20px;
+  height: 100%;
+  gap: 10px;
 }
 
 .max-qty {
@@ -1104,6 +1104,7 @@ a {
 .servicios-container h1{
   margin-bottom: 1em;
 }
+
 
 .search-txt-input {
   font-size: 14px;

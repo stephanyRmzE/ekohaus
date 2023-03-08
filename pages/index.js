@@ -47,7 +47,10 @@ export async function getStaticProps() {
   const galleryShow = await client.fetch(galleryQuery)
 
   // Pass data to the page via props
-  return { props: { murosData, bannerData, galleryShow} }
+  return {
+    props: { murosData, bannerData, galleryShow} ,
+    revalidate: 10, // In seconds
+  }
 }
 
 export default Home;
