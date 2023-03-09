@@ -5,7 +5,5 @@ export { default as Layout} from './Layout';
 export { default as NavBar} from './Navbar';
 export { default as Product} from './Product';
 export { default as Show} from './Show';
-export { default as Spinner} from './Spinner';
 export { default as VideoFrame} from './VideoFrame';
 export { default as Location} from './Location';
-

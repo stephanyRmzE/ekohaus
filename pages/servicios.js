@@ -32,7 +32,8 @@ export async function getStaticProps() {
   const cocina = await client.fetch(cocinaQuery)
 
 
-  return { props: { cocina } }
+  return { props: { cocina } ,
+    revalidate: 10, }
 }
 
 export default Servicios
