@@ -5,7 +5,7 @@ import {Cart} from '.'
 import {useStateContext} from '../context/StateContext'
 import { FaBars, FaTimes } from 'react-icons/fa';
 import {useRouter} from 'next/router'
-
+import Image from 'next/image'
 
 const Navbar = () => {
 
@@ -31,8 +31,8 @@ const Navbar = () => {
     <div className="navbar">
 
       <p className='logo'>
-        <Link href='/'>
-          <img src='/assets/ekohaus_logo.png' alt="logo ekohaus" />
+        <Link href='/' passHref>
+          <Image src='/assets/ekohaus_logo.png' alt="logo ekohaus" width={100} height={50}/>
         </Link>
       </p>
 
@@ -64,35 +64,45 @@ const Navbar = () => {
             <li className='nav-links dropdown' onClick={handleClick}>
 
               <Link
-              href='/contact'
+              href='/contact' passHref
             >Contactanos</Link>
 
               <div className="dropdown-content">
                 <Link
-                  href='/factura'
+                  href='/factura' passHref
                   className ="dropdown-link"
                   >Facturas</Link>
               </div>
 
             </li>
 
-            <li className='nav-links' onClick={handleClick} >
+            <li className='nav-links dropdown' onClick={handleClick}>
+
               <Link
-              href='/murosVerdes'
+              href='/murosVerdes' passHref
             >Productos</Link>
+
+              <div className="dropdown-content">
+                <Link
+                  href='/instalacion' passHref
+                  className ="dropdown-link"
+                  >Instalacion</Link>
+              </div>
+
             </li>
 
             <li className='nav-links' onClick={handleClick} >
-              <Link
+              <Link passHref
+              href='/nosotros'
+            >Nosotros</Link>
+            </li>
+
+            <li className='nav-links' onClick={handleClick} >
+              <Link passHref
               href='/servicios'
             >Servicios</Link>
             </li>
 
-            <li className='nav-links' onClick={handleClick} >
-              <Link
-              href='/instalacion'
-            >Instalacion</Link>
-            </li>
 
           </ul>
 

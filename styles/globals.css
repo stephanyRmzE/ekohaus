@@ -1,5 +1,3 @@
-
-
 html,
 body,
 * {
@@ -52,17 +50,17 @@ a {
 
 .nav-menu {
   display: grid;
-  grid-template-columns: repeat(5, auto);
-  grid-gap: 3em;
+  grid-template-columns: repeat(6, auto);
+  grid-gap: 1em;
   list-style: none;
   align-items: start;
   line-height: 60px;
-  margin-right: 4rem;
+  margin-right: 3rem;
 }
 
 .nav-links a {
   cursor: default;
-  padding: 0 0.5rem 0.5rem 0.5rem;
+  padding: 0 1.1rem 0.5rem;
   border-bottom: 3px solid #74962F;
 }
 
@@ -146,7 +144,7 @@ a {
 }
 
 .cart-button {
-  padding-right: 3rem;
+  padding-right: 1em;
 }
 
 .hero-banner-container {
@@ -851,9 +849,9 @@ span.text-red {
 }
 
 .success .description {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
-  text-align: center;
+  text-align: justify;
   margin: 10px;
   margin-top: 30px;
 }
@@ -1185,16 +1183,147 @@ a {
   border-radius: 50%;
   animation: spin 1.2s linear infinite;
 }
-@media screen and (max-width:1220px) {
 
-.nav-menu {
-    grid-gap: 1em;
-    margin-right: 1rem;
-  }
+.page404Container{
+  margin: 2em 0;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.page404Row{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.page404Text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.page404Container .btn{
+  width: 50%;
+}
+
+.page404Svg{
+  align-self: center;
+}
+
+.nosotrosContainer{
+  display: flex;
+  margin: 2em 5%;
+}
+
+.text-blk {
+  margin: 0;
+  padding: 10px;
+  line-height: 25px;
+}
+
+.nosotrosImg{
+  border-radius: 5px;
+}
+
+.responsive-container-block.bigContainer {
+  padding: 10px 30px;
+}
+
+.mainImg {
+  background-color: #2f4e24;
+  padding: 5px;
+  border-radius: 5px;
+  position: absolute;
+  right: 7%;
+  top: 150px;
+  z-index: 1;
+}
+
+.secImg{
+  background-color: #436c34;
+  padding: 5px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+}
+
+.text-blk.headingText {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 30px;
+  color:#2f4e24;
+  padding-right: 10px;
+  margin-bottom: 1rem;
+
 }
 
 
-@media (max-width: 1055px) {
+.allText {
+  padding: 0;
+  width: 40%;
+  margin: 0;
+
+}
+
+
+
+.text-blk.description {
+  font-size: 16px;
+  line-height: 26px;
+  color: rgb(102, 102, 102);
+  margin-bottom: 50px;
+  font-weight: 500;
+  text-align: justify;
+}
+
+
+.allText.aboveText {
+  margin-left: 40px;
+}
+
+.allText.bottomText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 2em 3%;
+}
+
+.ultimateImg {
+  width: 50%;
+  height: 100%;
+}
+
+
+@media screen and (max-width:1220px) {
+
+  .nav-menu {
+    grid-gap: 10px;
+    margin-right: 1rem;
+  }
+
+  .search-txt-input {
+    width: 14rem;
+  }
+
+}
+
+@media screen and (max-width:1120px) {
+
+
+  .search-txt-input {
+    width: 11rem;
+  }
+
+  .nav-menu {
+    grid-gap: 10px;
+  }
+
+}
+
+
+@media (max-width: 1060px) {
   .video-responsive img {
       height: 100%;
       width: 80%;
@@ -1221,7 +1350,7 @@ a {
   }
 
   .search-txt-input {
-    width: 10em;
+    width: 8rem;
   }
 
   .cart-button {
@@ -1237,7 +1366,72 @@ a {
 
 }
 
+@media (max-width: 905px) {
+  .search-txt-input {
+    width: 5rem;
+  }
+}
+
 @media screen and (max-width:850px) {
+  .ultimateImg {
+    width: 100%;
+    height: 450px;
+  }
+
+  .nosotrosContainer {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .allText {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .text-blk.headingText {
+    text-align: center;
+  }
+
+  .mainImg {
+    position: relative;
+    left: 50%;
+    top: 40px;
+    z-index: 1;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+
+  .secImg {
+
+    position: relative;
+    bottom: 190px;
+    left: 10%;
+    width: -moz-fit-content;
+    width: fit-content;
+    z-index: 2;
+  }
+
+  .text-blk.description {
+    font-size: 18px;
+    text-align: justify;
+  }
+
+
+  .allText.bottomText {
+    width: 95%;
+    align-items: left;
+  }
+
+  .text-blk.headingText {
+    text-align: left;
+  }
+
+  .text-blk.description {
+    text-align: justify;
+  }
   .factura-header {
       font-size: 2em;
 
@@ -1547,6 +1741,32 @@ a {
 
 @media (max-width: 450px) {
 
+  .allText {
+    padding: 0;
+    width: 100%;
+  }
+
+  .allText.bottomText {
+    margin: 30px 0 0 0;
+  }
+
+  .ultimateImg {
+    width: 100%;
+    height: 300px;
+  }
+
+  .mainImg {
+    left: 39%;
+    top: 75px;
+    width: 61%;
+  }
+
+  .secImg {
+    bottom: 190px;
+    left: 0%;
+    width: 76%;
+  }
+
   .video-responsive {
     height: 30vh;
   }
@@ -1652,5 +1872,21 @@ a {
 
   .productDiv{
     max-width: 80vw;
+  }
+
+  .page404Row {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+  }
+
+  .page404Container .btn {
+    width: 80%;
+    align-self: center;
+  }
+
+  .page404Svg {
+    align-self: center;
+
   }
 }

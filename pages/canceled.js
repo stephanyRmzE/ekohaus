@@ -12,9 +12,9 @@ function Canceled() {
         <h2>Su compra no pudo ser completada</h2>
         <p className="description">
           Si tiene alguna duda, por favor mande un correo a
-          <a href="mailto:order@example.com" className="email">order@example.com</a>
+          <a href="mailto:ventas@ekohausdelgolfo.com" className="email">ventas@ekohausdelgolfo.com</a>
         </p>
-        <Link href='/'>
+        <Link href='/' passHref>
           <button type='button' width='300px' className="btn">
             Continua comprando
           </button>
