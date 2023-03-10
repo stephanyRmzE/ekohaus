@@ -31,9 +31,13 @@ const Navbar = () => {
     <div className="navbar">
 
       <p className='logo'>
-        <Link href='/' passHref>
-          <Image src='/assets/ekohaus_logo.png' alt="logo ekohaus" width={100} height={50}/>
+        <Link href='/' passHref >
+          <a>
+            <Image src='/assets/ekohaus_logo.png' alt="logo ekohaus" width={100} height={50}/>
+          </a>
         </Link>
+
+
       </p>
 
 

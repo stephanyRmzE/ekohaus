@@ -1,8 +1,8 @@
 import '../styles/globals.css'
 import { Layout } from '../components'
 import { StateContext } from '../context/StateContext'
-
-import { Toaster } from 'react-hot-toast'
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import '../public/DataPicker.css'
 
 export default function App({ Component, pageProps }) {
@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }) {
   return (
     <StateContext>
       <Layout>
-        <Toaster/>
+        <ToastContainer/>
         <Component {...pageProps} />
       </Layout>
     </StateContext>

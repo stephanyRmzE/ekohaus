@@ -6,7 +6,7 @@ import CurrencyInput from 'react-currency-input-field';
 import dynamic from 'next/dynamic';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
+import { toast } from 'react-toastify';
 const Select = dynamic(() => import('react-select'), {
     ssr: false
 });
@@ -38,10 +38,6 @@ function Factura() {
     }
   });
 
-  const enviar = (data) => {
-    console.log(data)
-    alert(JSON.stringify(data));
-  };
 
   const [value, setValue] = useState('123');
   const [rawValue, setRawValue] = useState(' ');
@@ -54,9 +50,15 @@ function Factura() {
   const formFactura = useRef();
 
   const sendEmail = (e) => {
-    emailjs.sendForm('service_i1ec7hk', 'template_qswvwly', formFactura.current, `${process.env.NEXT_PUBLIC_EMAIL_JS_KEY}`)
+    emailjs.sendForm('service_02u5qq5', 'template_49clxp6', formFactura.current, `${process.env.NEXT_PUBLIC_EMAIL_JS_KEY}`)
       .then((result) => {
-          console.log(result.text);
+          toast.info('La informacion fue enviada con exito', {
+          position: "top-center",
+          autoClose: 5000,
+          closeOnClick: true,
+          pauseOnHover: true,
+          theme: "light",
+          });
       }, (error) => {
           console.log(error.text);
       });
@@ -68,7 +70,12 @@ function Factura() {
 
     <div className='factura-container' id= 'factura' >
       <p className='factura-header'>Facturación Electrónica</p>
-      <p className='factura-info'>Para solicitar su factura ingrese en el siguiente vinculo y rellene el formulario con su información fiscal. Para mayor control interno, favor de subir sus datos dentro de los 3 días posteriores a su compra. Favor de llenar todos los campos obligatorios adecuadamente para la correcta realización de su factura. Si no recibe su factura en un plazo de 2 a 3  días hábiles, contáctenos  al teléfono +52 (228) 1 06 50 03</p>
+      <p className='factura-info'>
+        Para solicitar su factura ingrese en el siguiente vinculo y rellene el formulario con su información fiscal.
+        Para mayor control interno, favor de subir sus datos dentro de los 3 días posteriores a su compra.
+        Favor de llenar todos los campos obligatorios adecuadamente para la correcta realización de su factura.
+        Si no recibe su factura en un plazo de 2 a 3  días hábiles, contáctenos  al teléfono +52 (228) 1 42 07 72
+      </p>
 
           <div className="factura-div" id= 'factura' >
 
@@ -170,10 +177,10 @@ function Factura() {
                   <Controller
                     control={control}
                     name='date'
-                    rules={{ required: true }}
                     render={({ field }) => (
                       <DatePicker
                         showIcon
+                        dateFormat="dd/MM/yyyy"
                         selected={startDate}
                         name = {field.name}
                         maxDate={maxDate}
@@ -181,8 +188,6 @@ function Factura() {
                       />
                       )}
                   />
-
-                  {errors?.date?.type === "required" && <p>Este campo es obligatorio</p>}
               </div>
 
 
@@ -225,7 +230,6 @@ function Factura() {
                   />
                   {errors?.metodoPago?.type === "required" && <p>Este campo es obligatorio</p>}
               </div>
-
 
               <button type='submit' className='btn-yellow' >
                 Enviar
