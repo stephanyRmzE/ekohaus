@@ -12,19 +12,9 @@ const Navbar = () => {
   const { showCart, setShowCart, totalQuantities } = useStateContext();
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
-  const [query, setQuery] = useState('')
 
-  const router = useRouter()
+  const router = useRouter();
 
-  const handleParam = setValue => e => setValue(e.target.value)
-
-  const handleSubmit = (e) => {
-     e.preventDefault();
-     router.replace({
-       pathname: '/murosVerdes',
-       query: {q: query},
-     })
-   }
 
   return (
 
@@ -45,71 +35,60 @@ const Navbar = () => {
 
           <ul className={click ? 'nav-menu active' : 'nav-menu '}>
 
-            <li className='nav-search'>
+            <li className='dropdown' onClick={handleClick}>
 
-              <form  onSubmit={handleSubmit} >
-                <input
-                  id="q"
-                  type="text"
-                  name='q'
-                  value={query}
-                  onChange={handleParam(setQuery)}
-                  className="search-txt-input"
-                  maxLength="100"
-                  />
-                <button
-                  type="submit"
-                  className="search-button">
-                  <AiOutlineSearch className='search-icon' />
-                </button>
-	            </form>
-            </li>
 
-            <li className='nav-links dropdown' onClick={handleClick}>
-
-              <Link
-              href='/contact' passHref
-            >Contactanos</Link>
+              <Link href='/contact' passHref >
+                <a className={router.pathname == "/contact" ? " nav-links linkActive" : "nav-links"}>
+                  Contactanos
+                </a>
+              </Link>
 
               <div className="dropdown-content">
-                <Link
-                  href='/factura' passHref
-                  className ="dropdown-link"
-                  >Facturas</Link>
+                <Link href='/factura' passHref >
+                  <a className ="dropdown-link">
+                    Facturas
+                  </a>
+                </Link>
               </div>
 
             </li>
 
-            <li className='nav-links dropdown' onClick={handleClick}>
+            <li className='dropdown' onClick={handleClick}>
 
-              <Link
-              href='/murosVerdes' passHref
-            >Productos</Link>
+              <Link href='/murosVerdes' passHref  >
+                <a className={router.pathname == "/murosVerdes" ? "nav-links linkActive" : "nav-links"}>
+                  Productos
+                </a>
+              </Link>
 
               <div className="dropdown-content">
-                <Link
-                  href='/instalacion' passHref
-                  className ="dropdown-link"
-                  >Instalacion</Link>
+                <Link href='/instalacion' passHref >
+                  <a className ="dropdown-link">
+                    Instalacion
+                  </a>
+                </Link>
               </div>
 
             </li>
 
-            <li className='nav-links' onClick={handleClick} >
-              <Link passHref
-              href='/nosotros'
-            >Nosotros</Link>
+            <li  onClick={handleClick} >
+              <Link passHref href='/nosotros' >
+                <a className={router.pathname == "/nosotros" ? "nav-links linkActive" : "nav-links"}>
+                  Nosotros
+                </a>
+              </Link>
             </li>
 
-            <li className='nav-links' onClick={handleClick} >
-              <Link passHref
-              href='/servicios'
-            >Servicios</Link>
+            <li onClick={handleClick} >
+              <Link passHref href='/servicios'>
+                <a className={router.pathname == "/servicios" ? "nav-links linkActive" : "nav-links"}>
+                  Servicios
+                </a>
+              </Link>
             </li>
-
 
           </ul>
-
 
         <div className='cart-button'>
           <button type='button' className='cart-icon' onClick={() => setShowCart(true)}>

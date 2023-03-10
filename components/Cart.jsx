@@ -1,7 +1,7 @@
 import React, {useRef} from 'react'
 import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping } from 'react-icons/ai';
 import {TiDeleteOutline} from 'react-icons/ti'
-import { toast } from "react-hot-toast";
+import { toast } from 'react-toastify';
 import {useStateContext} from '../context/StateContext'
 import {urlFor} from '../lib/client'
 import getStripe from '../lib/getStripe'
@@ -76,7 +76,7 @@ const Cart = () => {
                       </span>
                     </p>
                   </div>
-                  <button type='button'className="remove-item" onClick={() => findCartItems()} >
+                  <button type='button'className="remove-item" onClick={() => onRemove()} >
                     <TiDeleteOutline/>
                   </button>
                 </div>
