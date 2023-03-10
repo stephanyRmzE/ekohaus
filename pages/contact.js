@@ -2,7 +2,7 @@ import Location from '../components/Location'
 import {useRef} from "react";
 import Select from "react-select";
 import emailjs from '@emailjs/browser';
-import Link from 'next/link'
+import { toast } from 'react-toastify';
 
 function Contact() {
 
@@ -16,13 +16,18 @@ function Contact() {
 
   const form = useRef();
 
-
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_1kh6sc2', 'template_vb7d3lv', form.current, 'Q3RuhRi5QdSgrpPen')
+    emailjs.sendForm('service_o0avjfu', 'template_ttupxl6', form.current, `${process.env.NEXT_PUBLIC_EMAIL_JS_KEY}`)
       .then((result) => {
-          console.log(result.text);
+          toast.success('El correo fue enviado con exito', {
+          position: "top-center",
+          autoClose: 5000,
+          closeOnClick: true,
+          pauseOnHover: true,
+          theme: "light",
+          });
       }, (error) => {
           console.log(error.text);
       });

@@ -3,6 +3,7 @@ import {client} from '../lib/client.js'
 import { Product, HeroBanner, Show} from '../components/index'
 import useEmblaCarousel from 'embla-carousel-react'
 
+
 const OPTIONS = { slidesToScroll: 'auto', containScroll: 'trimSnaps' }
 
 function Home({ murosData,  bannerData, galleryShow } ) {

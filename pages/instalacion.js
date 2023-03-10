@@ -1,14 +1,16 @@
 import React from 'react'
+import {client} from '../lib/client.js'
 import VideoFrame from '../components/VideoFrame'
 
 
-function Instalacion() {
+function Instalacion(instalacion) {
+
   return (
     <div className='instalacion-container'>
 
       <h1>Como instalar muro verde artificial</h1>
 
-      <VideoFrame embedId="xTYWJgUkoNQ" />
+      <VideoFrame embedId="xTYWJgUkoNQ" instalacion = {instalacion} />
 
       <h3>Pasos a seguir</h3>
       <div className='list-div'>
@@ -23,5 +25,15 @@ function Instalacion() {
     </div>
   )
 }
+
+export async function getStaticProps() {
+  // Fetch data from external API
+  const instalacionQuery = `*[_type == "gallery" && slug.current == 'instalacion'][0]`
+  const instalacion = await client.fetch(instalacionQuery)
+
+
+  return { props: { instalacion } ,revalidate: 10}
+}
+
 
 export default Instalacion
