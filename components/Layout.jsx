@@ -1,8 +1,6 @@
 import React, {useEffect} from 'react'
 import Head from 'next/head'
-
 import Navbar  from './Navbar'
-
 import Footer from './Footer'
 import {useStateContext} from '../context/StateContext'
 
@@ -17,7 +15,7 @@ const Layout = ({children}) => {
     setTotalPrice(totalPriceLS);
     const totalQuantitiesLS = JSON.parse(window.localStorage.getItem('total_quantities_ekohaus')) ?? 0 ;
     setTotalQuantities(totalQuantitiesLS);
-  }, [])
+  }, [setCartItems, setTotalPrice, setTotalQuantities ])
 
   useEffect(() => {
     window.localStorage.setItem('cart_items_ekohaus', JSON.stringify(cartItems));
