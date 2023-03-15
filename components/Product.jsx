@@ -5,7 +5,6 @@ import Image from 'next/image'
 
 function Product({ product }) {
   const {image, name, price, _type, slug} = product;
-
   const myLoader = ({ src, width, quality }) => {
   const newImage = src.replace('image-', 'https://cdn.sanity.io/images/wej343gq/production/').replace('-png', '.png');
   return `${newImage}?w=${width}&q=${quality || 75}`
