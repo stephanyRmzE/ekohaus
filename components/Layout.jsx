@@ -30,6 +30,7 @@ const Layout = ({children}) => {
         <link rel="icon" href="/assets/ekohaus_logo.png" />
         <meta name="keywords"
                     content="Muros verdes, follaje artificial, green wall, Xalapa" />
+
       </Head>
       <header>
         <Navbar/>
