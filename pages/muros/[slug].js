@@ -26,6 +26,7 @@ const MurosDetails = ({ product, products }) => {
               src={image[index].asset._ref}
               width={500}
               height={500}
+              loading="eager"
               className="product-detail-image" />
           </div>
           <div className="small-images-container">
