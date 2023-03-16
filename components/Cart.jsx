@@ -5,10 +5,17 @@ import { toast } from 'react-toastify';
 import {useStateContext} from '../context/StateContext'
 import {urlFor} from '../lib/client'
 import getStripe from '../lib/getStripe'
+import Image from 'next/image'
 
 const Cart = () => {
   const cartRef = useRef();
   const { totalPrice, totalQuantities, cartItems, setShowCart, toogleCartItemQuantity, onRemove} = useStateContext()
+
+  const myLoader = ({ src, width, quality }) => {
+  const newImage = src.replace('image-', 'https://cdn.sanity.io/images/wej343gq/production/').replace('-png', '.png');
+  return `${newImage}?w=${width}&q=${quality || 75}`
+  }
+
   const handleCheckout = async () => {
 
     const stripe = await getStripe();
@@ -56,7 +63,14 @@ const Cart = () => {
         <div className="product-container">
           {cartItems.length >=1 && cartItems.map((item, index)=> (
             <div className="product" key={item._id}>
-              <img src={urlFor(item?.image[0])}  alt = 'product' className='cart-product-image'  />
+              <Image
+                alt={item?.name}
+                loader={myLoader}
+                src={item?.image[[0]].asset._ref}
+                width={150}
+                height={150}
+                className='cart-product-image'
+                />
               <div className="item-desc">
                 <div className="flex top">
                   <h5>{item?.name}</h5>
