@@ -38,7 +38,7 @@ function Success() {
     setTotalPrice(0);
     setTotalQuantities(0);
     runConfetti();
-  }, [session_id, setCartItems, setTotalPrice, setTotalQuantities ])
+  }, [data, session_id, setCartItems, setTotalPrice, setTotalQuantities ])
 
 
 
