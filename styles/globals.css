@@ -1148,7 +1148,7 @@ a {
 
 .showHeader{
   text-align: center;
-  margin: 0 auto 2em;
+  margin: 1em auto 1em;
   color: #2f4e24;
 }
 
@@ -1156,8 +1156,8 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 5px;
-  height: 80vh;
-  margin: 0 10% 3em;
+  height: 85vh;
+  margin: 0 16% 3em;
 }
 
 
@@ -1333,6 +1333,10 @@ a {
   }
   .nav-menu {
     margin-right: 0rem;
+  }
+
+  .showColumns {
+    margin: 0 13% 3em;
   }
 
 }

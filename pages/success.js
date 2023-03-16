@@ -4,25 +4,40 @@ import {BsBagCheckFill} from 'react-icons/bs'
 import {useStateContext} from '../context/StateContext'
 import { runConfetti } from '../lib/utils'
 import { useRouter } from 'next/router';
+import { getId, updateDocumentStock } from '../lib/client';
+import useSWR from 'swr'
 
 function Success() {
   const {  setCartItems, setTotalPrice, setTotalQuantities} = useStateContext();
-  const [checkout, setCheckout] = useState([])
+
   const {
     query: { session_id },
   } = useRouter();
 
+  const fetcher = (...args) => fetch(...args).then(res => res.json());
+  const { data, error } = useSWR(
+    () => `/api/checkout_sessions/${session_id}`,
+    fetcher
+  );
+
+
+
   useEffect(() => {
 
-    fetch(`/api/checkout_sessions/${session_id}`)
-                .then((response) => response.json())
-                .then((data) => setCheckout(data));
+    data?.map((product) =>{
+      (async () => {
+      const id = await getId(product.description)
+      const update = await updateDocumentStock(id, product.quantity)
+    })()
 
-   localStorage.clear();
-   setCartItems([]);
-   setTotalPrice(0);
-   setTotalQuantities(0);
-   runConfetti();
+    }
+    )
+
+    localStorage.clear();
+    setCartItems([]);
+    setTotalPrice(0);
+    setTotalQuantities(0);
+    runConfetti();
   }, [session_id, setCartItems, setTotalPrice, setTotalQuantities ])
 
 
@@ -49,5 +64,7 @@ function Success() {
     </div>
   )
 }
+
+
 
 export default Success

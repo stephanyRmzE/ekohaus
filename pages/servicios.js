@@ -26,14 +26,6 @@ function Servicios({cocina}) {
 }
 
 
-export async function getStaticProps() {
-  // Fetch data from external API
-  const  cocinaQuery = `*[_type == "gallery" && slug.current == 'cocinas'][0]`
-  const cocina = await client.fetch(cocinaQuery)
 
-
-  return { props: { cocina } ,
-    revalidate: 10, }
-}
 
 export default Servicios
