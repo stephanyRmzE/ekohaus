@@ -111,9 +111,11 @@ a {
   min-width: 100%;
   height: fit-content;
   z-index: 1;
-  border: 3px solid #74962F;
+  border: 1px solid #74962f;
   border-top: 0;
   line-height: 2.5rem;
+  background-color: #f2f4ed;
+  border-radius: 2px;
 }
 
 
@@ -1157,7 +1159,7 @@ a {
   grid-template-columns: repeat(3, 1fr);
   gap: 5px;
   height: 85vh;
-  margin: 0 16% 3em;
+  margin: 0 18% 3em;
 }
 
 

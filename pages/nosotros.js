@@ -56,7 +56,8 @@ export async function getStaticProps() {
   const imageNosotros = await client.fetch(imgQuery)
 
 
-  return { props: { imageNosotros } }
+  return { props: { imageNosotros },
+    revalidate: 10 }
 }
 
 export default nosotros

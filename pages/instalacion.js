@@ -30,8 +30,6 @@ export async function getStaticProps() {
   // Fetch data from external API
   const instalacionQuery = `*[_type == "gallery" && slug.current == 'instalacion'][0]`
   const instalacion = await client.fetch(instalacionQuery)
-
-
   return { props: { instalacion } ,revalidate: 10}
 }
 
