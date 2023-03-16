@@ -13,7 +13,7 @@ const Cart = () => {
 
     const stripe = await getStripe();
 
-    const response = await fetch('/api/stripe', {
+    const response = await fetch('/api/checkout_sessions', {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(cartItems),

@@ -30,18 +30,24 @@ export const StateContext = (({children}) => {
   const onAdd = (product, quantity) => {
 
     const checkProductInCart = cartItems.find((item) => item._id === product._id)
+    if (product.stock > quantity ) {
+      setTotalPrice((prevTotalPrice) => prevTotalPrice + (product.price * quantity))
+      setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + product.quantity)
 
-    setTotalPrice((prevTotalPrice) => prevTotalPrice + (product.price * quantity))
-    setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + product.quantity)
+      if (checkProductInCart) {
+        setCartItems(upCartItems(product, quantity));
 
-    if (checkProductInCart) {
-      setCartItems(upCartItems(product, quantity));
-
-    } else {
-      product.quantity = quantity;
-      setCartItems([...cartItems, {...product}]);
+      } else {
+        product.quantity = quantity;
+        setCartItems([...cartItems, {...product}]);
+      }
+      toast.success(`${qty} ${product.name} agregado al carrito`, {position: "top-center"});
+    }else {
+      toast.error('No hay sufiente producto en stock para esta compra', {
+        position: "top-center",
+      });
     }
-    toast.success(`${qty} ${product.name} agregado al carrito`);
+
   }
 
   const onRemove = (id) => {
