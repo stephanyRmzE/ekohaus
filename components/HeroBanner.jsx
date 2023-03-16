@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { useMediaQuery } from "@material-ui/core";
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const HeroBanner = ({heroBanner}) => {
 
