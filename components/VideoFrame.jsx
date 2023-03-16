@@ -34,7 +34,7 @@ function VideoFrame({embedId, instalacion}) {
         src={image[[0]].asset._ref}
         width={800}
         height={500}
-        priority
+        loading="eager"
         quality={50}
          />
     </div>
