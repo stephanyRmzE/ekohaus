@@ -169,25 +169,16 @@ a {
   z-index: -9999;
 }
 
+
 .hero-banner-container .hero-small-title {
   font-size: 32px;
   font-weight: 600;
   color: #fffdfd;
   background-color: #00000022;
+  z-index: 1;
 }
 
-.hero-banner-container button {
-  border-radius: 5px;
-  padding: 10px 16px;
-  background-color: #74962F;
-  color: white;
-  border: none;
-  margin-top: 40px;
-  font-size: 18px;
-  font-weight: 500;
-  cursor: pointer;
-  z-index: 10000 !important;
-}
+
 
 .hero-banner-container h3 {
   font-size: 4rem;
@@ -195,15 +186,9 @@ a {
   background-color: #00000022;
 }
 
-.hero-banner-container h1 {
-  color: white;
-  font-size: 10em;
-  margin-left: -20px;
-  text-transform: uppercase;
-
-}
 
 .hero-title {
+  position: relative;
   color: #ffffff;
   z-index: 999999;
 }
@@ -1587,12 +1572,6 @@ a {
 
   .hero-banner-container h3 {
     font-size: 40px;
-  }
-
-  .hero-banner-container button {
-    margin-top: 90px;
-    z-index: 10000;
-
   }
 
   .desc {
