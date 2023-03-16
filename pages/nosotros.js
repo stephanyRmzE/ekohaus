@@ -42,6 +42,7 @@ function nosotros({imageNosotros}) {
           alt={name}
           width = {400}
           height = {300}
+          loading="eager"
           className='nosotrosImg'
         />
       </div>
