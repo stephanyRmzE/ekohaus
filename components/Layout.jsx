@@ -6,6 +6,33 @@ import {useStateContext} from '../context/StateContext'
 
 
 const Layout = ({children}) => {
+
+  function addPageJsonLd(){
+    return{
+      __html: `{
+      "@context": "https://schema.org/",
+      "@type": "Store",
+      "name": "Ekohaus del golfo",
+      "description": "Los mejores en diseño y venta de jardines verticales interiores y exteriores. Mas de 30 estilos de muros verdes. Facil modo de compra. www.ekohausdelgolfo.com.mx",
+      "url" : "https://www.ekohausdelgolfo.com.mx",
+      "logo" : "/assets/ekohaus_logo.png",
+      "telephone": " (228) 106-5003",
+      "openingHours" : "Mo-fr 09:00-17:00, Sa 09:00-12:30",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "MX",
+        "addressLocality": "Xalapa, Veracruz",
+        "postalCode": "91193",
+        "streetAddress": "Circuito arco sur 102"
+      },
+      "sameAs":[
+        "https://www.facebook.com/Ekohausveracruz/",
+        "https://www.instagram.com/ekohausdelgolfo/"
+      ]
+    }
+  `,
+    }
+  }
   const { cartItems, setCartItems, totalPrice, setTotalPrice, totalQuantities, setTotalQuantities} = useStateContext();
 
   useEffect(() => {
@@ -33,8 +60,13 @@ const Layout = ({children}) => {
           content="Muros verdes, follaje artificial, green wall, Xalapa, ekohaus del golfo" />
         <meta
           name="description"
-          content="Los mejores en diseño y venta de jardines verticales interiores y exteriores. Mas de 30 estilos de muros verdes. Facil modo de compra. www.ekohausdelgolfo.com.mx."
+          content="Los mejores en diseño y venta de jardines verticales interiores y exteriores. Mas de 30 estilos de muros verdes. Facil modo de compra. www.ekohausdelgolfo.com.mx"
           key="desc"
+        />
+         <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={addPageJsonLd()}
+          key="product-jsonld"
         />
       </Head>
       <header>
