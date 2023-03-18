@@ -28,9 +28,14 @@ const Layout = ({children}) => {
       <Head>
         <title>Ekohaus del Golfo | Jardines Verticales Interiores y exteriores </title>
         <link rel="icon" href="/assets/ekohaus_logo.png" />
-        <meta name="keywords"
-                    content="Muros verdes, follaje artificial, green wall, Xalapa" />
-
+        <meta
+          name="keywords"
+          content="Muros verdes, follaje artificial, green wall, Xalapa, ekohaus del golfo" />
+        <meta
+          name="description"
+          content="Los mejores en diseño y venta de jardines verticales interiores y exteriores. Mas de 30 estilos de muros verdes. Facil modo de compra. www.ekohausdelgolfo.com.mx."
+          key="desc"
+        />
       </Head>
       <header>
         <Navbar/>
