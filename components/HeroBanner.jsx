@@ -23,7 +23,7 @@ useEffect(() => {
       <div className='hero-banner-container'
           style={{
                     backgroundImage: `url(${bannerImg})`,
-                    backgroundSize: '100% 115%',
+                    backgroundSize: '100% 100%',
                     backgroundRepeat: 'no-repeat'
                   }}>
 
