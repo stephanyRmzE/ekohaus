@@ -23,11 +23,11 @@ const Footer = () => {
         <p>2023 Ekohaus del Golfo All rights reserved</p>
         <p>Siguenos en redes sociales</p>
         <p className='icons'>
-          <a href="https://www.instagram.com/ekohausdelgolfo/">
+          <a target="_blank" href="https://www.instagram.com/ekohausdelgolfo/" rel="noopener noreferrer">
           <AiFillInstagram/>
           </a>
 
-          <a href="https://www.facebook.com/Ekohausveracruz/">
+          <a target="_blank"  href="https://www.facebook.com/Ekohausveracruz/" rel="noopener noreferrer">
           <AiFillFacebook/>
           </a>
         </p>
