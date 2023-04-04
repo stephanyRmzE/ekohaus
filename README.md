@@ -2,7 +2,7 @@
 
 #### An app created Stephany Ramirez Escarcega. Next.js-based e-commerce website that specializes in selling green walls. Our mission is to provide our customers with high-quality green walls that add a touch of nature and freshness to any space.
 
-##Contact
+## Contact
 If you have any questions or comments about this project, please don't hesitate to contact us at stephany.rmze@gmail.com We appreciate your feedback!
 
 ## Getting Started
