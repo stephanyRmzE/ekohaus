@@ -6,7 +6,7 @@ const Show = ({ galleryShow:{image}}) => {
 
   const myLoader = ({ src, width, quality }) => {
   const newImage = src.replace('image-', 'https://cdn.sanity.io/images/wej343gq/production/').replace('-png', '.png');
-  return `${newImage}?w=${width}&q=${quality || 75}`
+  return `${newImage}?w=${width}&q=${quality || 90}`
   }
 
   return (
