@@ -20,7 +20,7 @@ function Product({ product }) {
           alt={name}
           width = {250}
           height = {250}
-          loading="eager"
+          priority
           className = 'product-image'
           />
           <p className="product-name">{name}</p>
