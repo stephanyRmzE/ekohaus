@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import Link from 'next/link'
-import {AiOutlineShopping, AiOutlineSearch} from 'react-icons/ai'
+import {AiOutlineShopping, AiOutlineCaretDown} from 'react-icons/ai'
 import {Cart} from '.'
 import {useStateContext} from '../context/StateContext'
 import { FaBars, FaTimes } from 'react-icons/fa';
@@ -40,7 +40,7 @@ const Navbar = () => {
 
               <Link href='/contact' passHref >
                 <a className={router.pathname == "/contact" ? " nav-links linkActive" : "nav-links"}>
-                  Contactanos
+                  Contactanos <AiOutlineCaretDown size={15}/>
                 </a>
               </Link>
 
@@ -62,14 +62,6 @@ const Navbar = () => {
                 </a>
               </Link>
 
-              <div className="dropdown-content">
-                <Link href='/instalacion' passHref >
-                  <a className ="dropdown-link">
-                    Instalacion
-                  </a>
-                </Link>
-              </div>
-
             </li>
 
             <li  onClick={handleClick} >
@@ -81,9 +73,9 @@ const Navbar = () => {
             </li>
 
             <li onClick={handleClick} >
-              <Link passHref href='/servicios'>
-                <a className={router.pathname == "/servicios" ? "nav-links linkActive" : "nav-links"}>
-                  Servicios
+              <Link passHref href='/instalacion'>
+                <a className={router.pathname == "/instalacion" ? "nav-links linkActive" : "nav-links"}>
+                  Tutoriales
                 </a>
               </Link>
             </li>
