@@ -1205,7 +1205,7 @@ a {
 
 .nosotrosContainer{
   display: flex;
-  margin: 2em 5%;
+  margin: 2em 5% 6em;
 }
 
 .text-blk {
@@ -1331,6 +1331,11 @@ a {
 
   .showColumns {
     margin: 0 13% 3em;
+  }
+
+  .nosotrosContainer{
+    display: flex;
+    margin: 2em 5% ;
   }
 
 }

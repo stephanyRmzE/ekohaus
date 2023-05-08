@@ -48,6 +48,7 @@ const HeroBanner = ({heroBanner}) => {
           loader={myLoader}
           width={0}
           height={0}
+          priority={true}
           src='1'
           onLoad={handleLoad}
           />

@@ -40,9 +40,9 @@ function nosotros({imageNosotros}) {
           loader={myLoader}
           src ={image[1].asset._ref}
           alt={name}
+          priority={true}
           width = {400}
           height = {300}
-          loading="eager"
           className='nosotrosImg'
         />
       </div>
