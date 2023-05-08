@@ -15,20 +15,20 @@ const Show = ({ galleryShow:{image}}) => {
         Nuestros Trabajos
       </h1>
       <div className="showColumns">
-            {image?.map((item,i) => (
-                  <Image
-                    loader={myLoader}
-                    alt='nuestro trabajo'
-                    key={i}
-                    src={item.asset._ref}
-                    width='100'
-                    height='100'
-                    objectFit='fill'
-                    loading = 'eager'
-                  />
+        {image?.map((item,i) => (
+              <Image
+                loader={myLoader}
+                alt='nuestro trabajo'
+                key={i}
+                src={item.asset._ref}
+                width='100'
+                height='100'
+                objectFit='fill'
+                loading = 'eager'
+              />
 
-            ))}
-          </div>
+        ))}
+      </div>
 
       </>
   )
