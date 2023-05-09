@@ -15,29 +15,20 @@ const HeroBanner = ({heroBanner}) => {
 
   useEffect(() => {
     if (IsTabletOrPhone) {
+      setscrImg("/assets/hero_1.png");
       const img = heroBanner.image[1].asset._ref;
       const newImage = img.replace('image-', 'https://cdn.sanity.io/images/wej343gq/production/').replace('-png', '.png');
-      setscrImg("/assets/hero_1.png");
       setBannerImg(newImage);
     } else {
+      setscrImg("/assets/cover_comp.png");
       const img = heroBanner.image[0].asset._ref;
       const newImage = img.replace('image-', 'https://cdn.sanity.io/images/wej343gq/production/').replace('-png', '.png');
-      setscrImg("/assets/cover_comp.png");
       setBannerImg(newImage);
     } }, [IsTabletOrPhone, heroBanner])
 
   const myLoader = ({ src, width, quality }) => {
   return bannerImg
   }
-
-
-
-  const style = {
-    backgroundImage: `url(${isLoading ? '/assets/cover_comp.png' : bannerImg})`,
-    backgroundSize: '100% 100%',
-    backgroundRepeat: 'no-repeat'
-  };
-
 
   return (
 
@@ -46,17 +37,14 @@ const HeroBanner = ({heroBanner}) => {
         <p className="hero-small-title">{heroBanner.smallText}</p>
         <h3 className='hero-title'>{heroBanner.midText}</h3>
 
-
         <Image
           alt='cover'
           src={scrImg}
           width={0}
           height={0}
           priority={true}
-          onLoad={handleLoad}
           />
       </div>
-
     </div>
   )
 
