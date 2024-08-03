@@ -1,5 +1,5 @@
 import React from 'react'
-import {AiFillInstagram, AiFillFacebook, AiFillPhone} from 'react-icons/ai'
+import {AiFillInstagram, AiFillFacebook, AiFillPhone, AiOutlineWhatsApp} from 'react-icons/ai'
 
 
 const Footer = () => {
@@ -9,14 +9,15 @@ const Footer = () => {
       <div className='footer-info'>
         <div className='footer-text'>
             <h2>Dirección</h2>
-            <p>Circuito arco sur 102 col. Lomas verdes Xalapa,Veracruz.</p>
+            <p>KM1 carretera las Trancas Estanzuela,<br></br>
+               Las Trancas, México C.P 91637</p>
         </div>
         <div className='footer-text'>
-            <h2>Telefono</h2>
-            <a href="tel:228-106-5003" className='nav-call'>
-              <AiFillPhone/>
-              228 106 5003
-            </a>
+            <h2>Telefonos</h2>
+            <div className='footer-phones'>
+              <a href="tel:228-299-8296" className='nav-call'><AiFillPhone/> 228 299 8296</a>
+              <a href="https://wa.me/+522281218934" className='nav-call'><AiOutlineWhatsApp/> 228 121 8934</a>
+            </div>
         </div>
       </div>
       <div className='footer-container'>

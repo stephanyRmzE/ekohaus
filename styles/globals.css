@@ -512,6 +512,24 @@ span.text-red {
   gap: 10px;
 }
 
+.footer-text{
+  text-align: center;
+  color: #2c3a12;
+  margin: 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.footer-text h2{
+  font-size: 1.3rem;
+}
+
+.footer-phones{
+  display: flex;
+  gap: 1em;
+}
+
 .cart-heading {
   display: flex;
   align-items: center;
@@ -1042,11 +1060,6 @@ a {
   margin-bottom: 3em;
 }
 
-.footer-text{
-  text-align: center;
-  color: #2c3a12;
-  margin: 0.5em;
-}
 
 .combobox-input {
   width: 100%;
@@ -1811,10 +1824,19 @@ a {
 
   .footer{
     padding: 0 10px;
-    grid-gap: 0;
+    height: 210px;
   }
   .footer-container h2{
     font-size: 20px;
+  }
+
+  .footer-text h2{
+    font-size: 1rem;
+  }
+
+  .footer-phones{
+    flex-direction: column;
+    gap: 0.2em;
   }
 
   .showHeader {

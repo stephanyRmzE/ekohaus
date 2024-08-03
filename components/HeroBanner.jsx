@@ -1,36 +1,19 @@
 import React, {useState, useEffect} from 'react'
 import useMediaQuery from '@mui/material/useMediaQuery';
-import Image from 'next/image'
 
 const HeroBanner = ({heroBanner}) => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  const handleLoad = () => {
-    setIsLoading(false);
-  };
 
   const IsTabletOrPhone = useMediaQuery("(max-width:500px)");
-  const [bannerImg, setBannerImg] = useState('')
-  const [scrImg, setscrImg] = useState('/assets/hero_1.png')
+  const [scrImg, setscrImg] = useState('/assets/cover_comp.png')
 
   useEffect(() => {
     if (IsTabletOrPhone) {
-      const img = heroBanner.image[1].asset._ref;
-      const newImage = img.replace('image-', 'https://cdn.sanity.io/images/wej343gq/production/').replace('-png', '.png');
       setscrImg("/assets/hero_1.png");
-      setBannerImg(newImage);
+
     } else {
-      const img = heroBanner.image[0].asset._ref;
-      const newImage = img.replace('image-', 'https://cdn.sanity.io/images/wej343gq/production/').replace('-png', '.png');
       setscrImg("/assets/cover_comp.png");
-      setBannerImg(newImage);
-    } }, [IsTabletOrPhone, heroBanner])
 
-  const myLoader = ({ src, width, quality }) => {
-  return bannerImg
-  }
-
-
+    } }, [IsTabletOrPhone, scrImg])
 
   const style = {
     backgroundImage: `url(${scrImg})`,
